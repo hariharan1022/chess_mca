@@ -3,11 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, ZoomIn } from 'lucide-react';
 import bgBanner3 from '@/assets/background banner/digital-art-style-abstract-chess-pieces.jpg';
 
-// Dynamically import all images from the gallery folder - using updated Vite 5+ query syntax
-// Cast to any to handle Vite 5+ glob property verification in strict TS environments
+// Dynamically import all images from the gallery folder
 const galleryImages = (import.meta as any).glob('../../assets/gallery/**/*.{jpeg,jpg,png,svg}', { 
   eager: true, 
-  query: '?url', 
   import: 'default' 
 });
 
@@ -21,7 +19,7 @@ const getCategoryImages = (category: string) => {
 };
 
 const academyImages = getCategoryImages('academy');
-const championshipImages = getCategoryImages('national chess championships - 2026');
+const championshipImages = getCategoryImages('championships');
 
 export function Gallery() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
