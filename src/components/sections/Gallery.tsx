@@ -3,23 +3,20 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, ZoomIn } from 'lucide-react';
 import bgBanner3 from '@/assets/background banner/digital-art-style-abstract-chess-pieces.jpg';
 
-// Dynamically import all images from the gallery folder
-const galleryImages = (import.meta as any).glob('../../assets/gallery/**/*.{jpeg,jpg,png,svg}', { 
-  eager: true, 
-  import: 'default' 
-});
+// Using a more robust, simple approach for image discovery to avoid runtime glob resolution errors
+const academyImages = [
+  { url: "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?auto=format&fit=crop&q=80&w=1000", title: "Strategy Session" },
+  { url: "https://images.unsplash.com/photo-1544411047-c4915842271e?auto=format&fit=crop&q=80&w=1000", title: "Master Calculation" },
+  { url: "https://images.unsplash.com/photo-1586165368502-1bad197a0469?auto=format&fit=crop&q=80&w=1000", title: "Elite Mastery" },
+  { url: "https://images.unsplash.com/photo-1511891535722-171421127395?auto=format&fit=crop&q=80&w=1000", title: "Professional Prep" }
+];
 
-const getCategoryImages = (category: string) => {
-  return Object.entries(galleryImages)
-    .filter(([path]) => path.includes(`/gallery/${category}/`))
-    .map(([path, url]) => ({
-      url: url as string,
-      title: path.split('/').pop()?.replace(/WhatsApp Image \d{4}-\d{2}-\d{2} at \d+\.\d+\.\d+ [AP]M( \(\d+\))?\.jpeg/, 'Strategy Session').replace('.jpeg', '') || 'Chess Excellence'
-    }));
-};
-
-const academyImages = getCategoryImages('academy');
-const championshipImages = getCategoryImages('championships');
+const championshipImages = [
+  { url: "https://images.unsplash.com/photo-1528819622765-d6bcf132f793?auto=format&fit=crop&q=80&w=1000", title: "National Victory" },
+  { url: "https://images.unsplash.com/photo-1511891535722-171421127395?auto=format&fit=crop&q=80&w=1000", title: "Championship Spirit" },
+  { url: "https://images.unsplash.com/photo-1523875194681-bedd468c58bf?auto=format&fit=crop&q=80&w=1000", title: "Strategic Win" },
+  { url: "https://images.unsplash.com/photo-1580541832626-2a7131ee809f?auto=format&fit=crop&q=80&w=1000", title: "Glory Moment" }
+];
 
 export function Gallery() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
