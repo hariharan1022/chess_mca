@@ -111,7 +111,7 @@ export function Footer() {
                      <p className="text-[9px] text-slate-500 uppercase tracking-widest font-bold">Trusted by 10k+ Parents</p>
                   </div>
                </div>
-               <p className="text-[10px] text-slate-400 font-medium leading-relaxed italic border-t border-slate-100 pt-3 mt-3">Developing elite analytical skills through international chess standards.</p>
+               <p className="text-[10px] text-slate-400 font-medium leading-relaxed italic border-t border-slate-100 pt-3 mt-3">Developing elite analytical skills through State and District chess standards.</p>
             </div>
           </div>
         </div>

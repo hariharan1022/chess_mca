@@ -53,7 +53,7 @@ export function Gallery() {
               MOMENTS OF <span className="text-primary italic font-black">GLORY</span>
             </motion.h2>
             <p className="text-slate-700 max-w-4xl font-medium text-xl md:text-2xl px-4 md:px-0 leading-relaxed italic">
-              Witness our journey through the lens. From national championships to everyday strategy sessions at <span className="text-primary font-black uppercase tracking-widest not-italic italic">Master Chess Academy</span>.
+              Witness our journey through the lens. From State championships to everyday strategy sessions at <span className="text-primary font-black uppercase tracking-widest not-italic italic">Master Chess Academy</span>.
             </p>
           </div>
         </div>
@@ -107,7 +107,7 @@ export function Gallery() {
           <div>
             <h3 className="text-xl md:text-2xl font-black text-slate-900 mb-6 md:mb-8 uppercase tracking-widest italic flex items-center gap-3 md:gap-4">
                <span className="w-8 md:w-12 h-px bg-primary" />
-               NATIONAL CHAMPIONSHIPS
+               DISTRICT & STATE CHAMPIONSHIPS
             </h3>
             {/* Grid 2-col on mobile, 3-col on lg */}
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8">

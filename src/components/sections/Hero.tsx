@@ -49,7 +49,7 @@ export function Hero() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Unlock the genius within. Professional chess training from global grandmasters for every aspiring champion.
+            Unlock the genius within. Professional chess training from expert trainers for every aspiring District and State champion.
           </motion.p>
 
           <motion.div
@@ -73,7 +73,7 @@ export function Hero() {
             {[
               { label: "Champions", val: "10K+" },
               { label: "Trainers", val: "100+" },
-              { label: "Countries", val: "50+" },
+              { label: "Districts", val: "25+" },
               { label: "Rating", val: "4.9/5" }
             ].map((s, i) => (
               <div key={i} className="flex flex-col items-center md:items-start">

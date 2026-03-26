@@ -7,9 +7,9 @@ import bgBanner3 from '@/assets/background banner/digital-art-style-abstract-che
 
 const milestones = [
   { year: "2018", event: "Academy Founded", icon: <Shield className="w-6 h-6" /> },
-  { year: "2020", event: "Global Expansion", icon: <Globe className="w-6 h-6" /> },
+  { year: "2020", event: "State-wide Expansion", icon: <Globe className="w-6 h-6" /> },
   { year: "2022", event: "100+ Students Reached", icon: <Users className="w-6 h-6" /> },
-  { year: "2024", event: "Ranked #1 Global Prep", icon: <Award className="w-6 h-6" /> }
+  { year: "2024", event: "Top District Academy", icon: <Award className="w-6 h-6" /> }
 ];
 
 const highlights = [
@@ -24,8 +24,8 @@ const highlights = [
     icon: <TrendingUp className="w-6 h-6 text-primary" />
   },
   {
-    title: "Global Reach",
-    text: "Interacting with peers from over 50 countries in our exclusive digital arena.",
+    title: "State Reach",
+    text: "Interacting with peers from all districts across Tamil Nadu in our exclusive digital arena.",
     icon: <Globe className="w-6 h-6 text-primary" />
   }
 ];
@@ -58,7 +58,7 @@ export function About() {
               OUR <span className="text-primary italic font-black">MISSION</span>
             </h2>
             <p className="text-slate-700 max-w-4xl font-medium text-xl sm:text-2xl md:text-4xl leading-tight italic px-4 md:px-0 mb-12 md:mb-20">
-              "To democratize elite chess education by blending <span className="text-slate-900 font-bold">ancient wisdom</span> with <span className="text-primary font-bold italic">modern technology</span>, creating a global arena where every child can master the art of strategy."
+              "To democratize elite chess education by blending <span className="text-slate-900 font-bold">ancient wisdom</span> with <span className="text-primary font-bold italic">modern technology</span>, creating a community arena where every child can master the art of strategy."
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 w-full">
@@ -91,7 +91,7 @@ export function About() {
               MEET OUR <span className="text-primary">TEAM</span>
             </h2>
             <p className="text-slate-500 max-w-2xl mx-auto font-light text-base md:text-lg">
-              Led by Grandmasters and pedagogical experts, our team is dedicated to your growth at <span className="text-primary font-black tracking-widest italic uppercase">MASTER CHESS ACADEMY</span>.
+              Led by expert trainers and pedagogical experts, our team is dedicated to your growth at <span className="text-primary font-black tracking-widest italic uppercase">MASTER CHESS ACADEMY</span>.
             </p>
           </div>
 
@@ -145,7 +145,7 @@ export function About() {
             <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 md:gap-12">
               <div className="shrink-0 flex flex-col items-center lg:items-start">
                 <h4 className="text-[10px] md:text-xs font-black text-primary uppercase tracking-[0.4em] mb-1 italic">ACCREDITATIONS</h4>
-                <h5 className="text-lg md:text-xl font-black text-slate-900 uppercase italic tracking-tighter">GLOBAL REACH & ELITE RANKINGS</h5>
+                <h5 className="text-lg md:text-xl font-black text-slate-900 uppercase italic tracking-tighter">STATE-WIDE REACH & ELITE RANKINGS</h5>
               </div>
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-10 w-full lg:w-auto">
@@ -219,7 +219,7 @@ export function About() {
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-30" />
                 <h3 className="text-4xl font-black mb-8 tracking-tighter leading-tight relative z-10 text-slate-900 uppercase italic">OUR JOURNEY</h3>
                 <p className="text-slate-600 text-lg leading-relaxed mb-10 font-light relative z-10 italic">
-                  What started as a small community of chess lovers in 2018 has evolved into a global powerhouse of strategic excellence. We believe chess is a lifestyle, not just a game.
+                  What started as a small community of chess lovers in 2018 has evolved into a powerhouse of regional talent. We believe chess is a lifestyle, not just a game.
                 </p>
 
                 <div className="space-y-8 relative z-10 text-left">

@@ -39,7 +39,7 @@ function StudentsPride() {
             OUR STUDENTS <span className="text-primary">OUR PRIDE</span>
           </h2>
           <p className="text-slate-500 max-w-2xl mx-auto font-light text-sm md:text-base">
-            Meet the champions who have conquered the global stage through Master Chess Academy roadmap.
+            Meet the champions who have conquered the District and State stages through Master Chess Academy roadmap.
           </p>
         </div>
         
@@ -83,7 +83,7 @@ function CoursesShort() {
           <h2 className="text-2xl md:text-6xl font-black text-slate-900 uppercase tracking-tighter italic mb-3 md:mb-4 leading-none">
             OUR <span className="text-primary">COURSES</span>
           </h2>
-          <p className="text-slate-500 max-w-2xl mx-auto font-light text-sm md:text-base">Choose your level and start your professional chess training with Grandmasters.</p>
+          <p className="text-slate-500 max-w-2xl mx-auto font-light text-sm md:text-base">Choose your level and start your professional chess training based on District and State standards.</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
@@ -105,13 +105,13 @@ function CoursesShort() {
   );
 }
 
-function GlobalCommunity() {
+function StateCommunity() {
   return (
     <section className="py-12 md:py-24 relative overflow-hidden">
       <div className="absolute inset-0 z-0">
           <img 
             src="https://images.unsplash.com/photo-1529699211952-734e80c4d42b?auto=format&fit=crop&q=80&w=2000" 
-            alt="Global Community" 
+            alt="State Community" 
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-white/95" />
@@ -121,15 +121,15 @@ function GlobalCommunity() {
           <div>
             <h2 className="text-2xl md:text-6xl font-black text-slate-900 italic uppercase tracking-tighter mb-6 md:mb-10 leading-[0.9]">
               Introduce your kid to the <br className="hidden md:block" /> 
-              <span className="text-primary">global community</span> <br className="hidden md:block" /> 
+              <span className="text-primary">State community</span> <br className="hidden md:block" /> 
               of chess-playing kids
             </h2>
-            <p className="text-slate-500 text-base md:text-lg font-light mb-8 md:mb-12">Building world-class champions starts with a global perspective and a shared passion.</p>
+            <p className="text-slate-500 text-base md:text-lg font-light mb-8 md:mb-12">Building State and District champions starts with a strong foundation and a shared passion.</p>
             
             <div className="space-y-6 md:space-y-8">
               {[
                 { icon: <MessageSquare />, text: "Peer learning during weekly community sessions.", brand: "MASTER CHESS ACADEMY" },
-                { icon: <Globe />, text: "Interact and develop friendships with kids from different nationalities.", brand: "MASTER CHESS ACADEMY" },
+                { icon: <Globe />, text: "Interact and develop friendships with kids from different districts across Tamil Nadu.", brand: "MASTER CHESS ACADEMY" },
                 { icon: <Trophy />, text: "Develop a competitive spirit with our weekly practice tournaments.", brand: "MASTER CHESS ACADEMY" }
               ].map((item, i) => (
                 <div key={i} className="flex gap-4 md:gap-6 group">
@@ -163,7 +163,7 @@ function Home() {
   return (
     <>
       <Hero />
-      <GlobalCommunity />
+      <StateCommunity />
       <StudentsPride />
       <CoursesShort />
       
