@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import { Shield, Globe, Target, TrendingUp, Award, Users, CheckCircle2 } from 'lucide-react';
 import parthibanImg from '@/assets/masters/parthiban.jpeg';
-import bgBanner1 from '@/assets/background banner/abstract-chess-pieces-digital-art-style.jpg';
-import bgBanner2 from '@/assets/background banner/digital-art-style-abstract-chess-pieces (1).jpg';
-import bgBanner3 from '@/assets/background banner/digital-art-style-abstract-chess-pieces.jpg';
+import bgBanner1 from '@/assets/background_banner/abstract-chess-pieces-digital-art-style.jpg';
+import bgBanner2 from '@/assets/background_banner/digital-art-style-abstract-chess-pieces_1.jpg';
+import bgBanner3 from '@/assets/background_banner/digital-art-style-abstract-chess-pieces.jpg';
 
 const milestones = [
   { year: "2018", event: "Academy Founded", icon: <Shield className="w-6 h-6" /> },

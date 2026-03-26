@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Twitter, Linkedin, Users, Trophy, Award, Target, Star, Shield } from 'lucide-react';
 import parthibanImg from '@/assets/masters/parthiban.jpeg';
 
-import bgBanner2 from '@/assets/background banner/digital-art-style-abstract-chess-pieces (1).jpg';
+import bgBanner2 from '@/assets/background_banner/digital-art-style-abstract-chess-pieces_1.jpg';
 
 const trainers = [
   {
@@ -80,7 +80,7 @@ export function Trainers() {
               OUR ELITE <span className="text-primary italic font-black">MENTORS</span>
             </motion.h2>
             <p className="text-slate-700 max-w-2xl font-medium text-xl md:text-2xl px-4 md:px-0 leading-relaxed italic">
-              Train with the world's best. Our mentors are international masters and certified pedagogical experts dedicated to your growth.
+              Train with the world's best. Our mentors are expert mentors and certified pedagogical experts dedicated to your growth.
             </p>
           </div>
         </div>

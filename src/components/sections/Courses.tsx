@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import { BookOpen, Target, CheckCircle2, Shield, Star, Award, Zap, Brain, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
-import bgBanner1 from '@/assets/background banner/abstract-chess-pieces-digital-art-style.jpg';
-import bgBanner2 from '@/assets/background banner/digital-art-style-abstract-chess-pieces (1).jpg';
-import bgBanner3 from '@/assets/background banner/digital-art-style-abstract-chess-pieces.jpg';
+import bgBanner1 from '@/assets/background_banner/abstract-chess-pieces-digital-art-style.jpg';
+import bgBanner2 from '@/assets/background_banner/digital-art-style-abstract-chess-pieces_1.jpg';
+import bgBanner3 from '@/assets/background_banner/digital-art-style-abstract-chess-pieces.jpg';
 
 const coursesData = [
   {
@@ -68,10 +68,10 @@ const coursesData = [
   },
   {
     id: 'advanced',
-    title: 'PHASE 03: GRANDMASTER PREPARATION',
+    title: 'PHASE 03: STATE-LEVEL PREPARATION',
     level: 'Advanced',
     tagline: 'MASTER THE ELITE TECHNIQUES & OPENING PREP',
-    description: 'The highest level of preparation. Intensive training with 4000+ puzzles, deep engine analysis, and direct games against titled masters.',
+    description: 'The highest level of preparation. Intensive training with 4000+ puzzles, deep engine analysis, and games against expert mentors.',
     about: 'Our Advanced program is a rigorous "bootcamp" for aspiring professionals. We provide you with the same training tools and opening repertoires used by the world\'s top 1% of players.',
     curriculum: [
       'Elite Opening Prep: Building a bulletproof repertoire',
@@ -81,7 +81,7 @@ const coursesData = [
       'Tournament Preparation: Physical and mental peak performance'
     ],
     outcomes: [
-      'Ready to compete in international FIDE tournaments',
+      'Ready to compete in District and State level tournaments',
       'Mastery over modern opening theories and variations',
       'Ability to calculate deep, branching variations with precision',
       'Development of a signature playing style'
@@ -92,13 +92,13 @@ const coursesData = [
       'High-pressure decision making',
       'Physical stamina for multi-hour games'
     ],
-    whyChooseUs: 'Direct access to FIDE Grandmasters and International Masters. You aren\'t just a student; you are an apprentice to masters.',
+    whyChooseUs: 'Direct access to expert District and State level trainers. You aren\'t just a student; you are an apprentice to true experts.',
     image: bgBanner3,
     stats: { puzzles: '4000+', duration: '1 Year', students: '1500+' }
   }
 ];
 
-const GlobalBenefits = () => (
+const StateBenefits = () => (
   <section className="py-12 md:py-24 bg-black text-white relative overflow-hidden">
      <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
@@ -277,7 +277,7 @@ export function Courses() {
         </section>
       ))}
 
-      <GlobalBenefits />
+      <StateBenefits />
 
       {/* Final Global CTA */}
       <section className="py-20 md:py-40 bg-white text-center">

@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ZoomIn } from 'lucide-react';
-import bgBanner3 from '@/assets/background banner/digital-art-style-abstract-chess-pieces.jpg';
+import bgBanner3 from '@/assets/background_banner/digital-art-style-abstract-chess-pieces.jpg';
 
 // Vite glob imports for dynamic image discovery
 const academyImageModules = (import.meta as any).glob('@/assets/gallery/academy/*.{jpeg,jpg,png,JPG}', { eager: true, query: '?url', import: 'default' });
