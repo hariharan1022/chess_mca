@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Brain, ChevronRight, HelpCircle, Lightbulb, Zap } from 'lucide-react';
+import { Brain, ChevronRight, Lightbulb, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 
 const puzzles = [
