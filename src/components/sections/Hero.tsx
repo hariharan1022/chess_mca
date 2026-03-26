@@ -73,7 +73,7 @@ export function Hero() {
             {[
               { label: "Students", val: "100+" },
               { label: "Coaches", val: "10+" },
-              { label: "Districts", val: "25+" },
+              { label: "Pudukkottai", val: "2 Branches" },
               { label: "Rating", val: "4.9/5" }
             ].map((s, i) => (
               <div key={i} className="flex flex-col items-center md:items-start">

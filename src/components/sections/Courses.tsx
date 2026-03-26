@@ -183,7 +183,7 @@ export function Courses() {
                       <Zap className="w-4 h-4 text-primary" /> ABOUT THIS COURSE
                    </h4>
                    <p className="text-slate-600 text-base md:text-lg font-light leading-relaxed italic mb-6 md:mb-8">"{course.about}"</p>
-                   <div className="grid grid-cols-3 gap-2 md:gap-4 border-t border-slate-100 pt-6 md:pt-8 text-center sm:text-left">
+                   <div className="grid grid-cols-2 gap-2 md:gap-4 border-t border-slate-100 pt-6 md:pt-8 text-center sm:text-left">
                       <div>
                          <div className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">PUZZLES</div>
                          <div className="text-base md:text-xl font-black text-slate-900 uppercase italic">{course.stats.puzzles}</div>
@@ -191,10 +191,6 @@ export function Courses() {
                       <div>
                          <div className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">DURATION</div>
                          <div className="text-base md:text-xl font-black text-slate-900 uppercase italic">{course.stats.duration}</div>
-                      </div>
-                      <div>
-                         <div className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">GRADUATES</div>
-                         <div className="text-base md:text-xl font-black text-slate-900 uppercase italic">{course.stats.students}</div>
                       </div>
                    </div>
                 </div>
@@ -263,7 +259,7 @@ export function Courses() {
                  <div className="pt-8 md:pt-10 flex flex-col sm:flex-row items-center justify-between gap-6 md:gap-8 border-t border-slate-100">
                     <div className="text-center sm:text-left">
                         <div className="text-[8px] md:text-[10px] font-black text-slate-400 mb-1 uppercase tracking-widest">STARTING AT</div>
-                        <div className="text-3xl md:text-4xl font-black text-slate-900 uppercase tracking-tighter italic leading-none">₹1300<span className="text-xs md:text-sm font-bold text-slate-400 italic">/PROGRAM</span></div>
+                        <div className="text-3xl md:text-4xl font-black text-slate-900 uppercase tracking-tighter italic leading-none">₹1300<span className="text-xs md:text-sm font-bold text-slate-400 italic">/MONTH</span></div>
                     </div>
                     <Button size="lg" className="w-full sm:w-auto px-10 md:px-12 py-5 md:py-7 rounded-2xl bg-slate-900 hover:bg-primary text-white font-black uppercase tracking-widest shadow-2xl shadow-slate-200 transition-all group text-xs md:text-sm">
                        ENROLL IN {course.level} <TrendingUp className="ml-2 md:ml-3 w-4 h-4 group-hover:translate-x-1 transition-transform" />
