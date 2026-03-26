@@ -128,9 +128,9 @@ function StateCommunity() {
             
             <div className="space-y-6 md:space-y-8">
               {[
-                { icon: <MessageSquare />, text: "Peer learning during weekly community sessions.", brand: "MASTER CHESS ACADEMY" },
-                { icon: <Globe />, text: "Interact and develop friendships with kids from different districts across Tamil Nadu.", brand: "MASTER CHESS ACADEMY" },
-                { icon: <Trophy />, text: "Develop a competitive spirit with our weekly practice tournaments.", brand: "MASTER CHESS ACADEMY" }
+                { icon: <MessageSquare />, text: "Peer learning during weekly community sessions.", brand: "MASTERS CHESS ACADEMY" },
+                { icon: <Globe />, text: "Interact and develop friendships with kids from different districts across Tamil Nadu.", brand: "MASTERS CHESS ACADEMY" },
+                { icon: <Trophy />, text: "Develop a competitive spirit with our weekly practice tournaments.", brand: "MASTERS CHESS ACADEMY" }
               ].map((item, i) => (
                 <div key={i} className="flex gap-4 md:gap-6 group">
                    <div className="w-10 h-10 md:w-14 md:h-14 glass-card border-slate-200/50 flex items-center justify-center shrink-0 group-hover:border-primary transition-colors text-primary bg-white shadow-md rounded-2xl">

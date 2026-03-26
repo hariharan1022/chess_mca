@@ -19,7 +19,7 @@ export function Footer() {
                 <img src={mcaLogo} alt="MCA Logo" className="w-full h-full object-contain p-1" />
               </div>
               <span className="text-sm md:text-xl font-black text-slate-900 tracking-widest uppercase italic leading-tight">
-                MASTER CHESS <br />
+                MASTERS CHESS <br />
                 <span className="text-primary">ACADEMY</span>
               </span>
             </div>
@@ -119,7 +119,7 @@ export function Footer() {
         {/* Footer Bottom Bar */}
         <div className="pt-8 pb-4 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 text-slate-500 text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.2em] relative z-20">
           <p className="text-center md:text-left leading-relaxed">
-             © 2026 MASTER CHESS ACADEMY. ALL RIGHTS RESERVED. <br className="md:hidden" />
+             © 2026 MASTERS CHESS ACADEMY. ALL RIGHTS RESERVED. <br className="md:hidden" />
              <span className="text-primary md:ml-2">DESIGNED BY SK BROTHES CODE TECHNOLOGYS.</span>
           </p>
           <div className="flex flex-wrap justify-center gap-6 md:gap-10">

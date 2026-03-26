@@ -27,7 +27,7 @@ export function Navbar() {
   }, []);
 
   const handleEnroll = () => {
-    window.open('https://wa.me/9629399085?text=Hello! I would like to enroll in Master Chess Academy.', '_blank');
+    window.open('https://wa.me/9629399085?text=Hello! I would like to enroll in Masters Chess Academy.', '_blank');
   };
 
   return (
@@ -45,7 +45,7 @@ export function Navbar() {
             <img src={mcaLogo} alt="MCA Logo" className="w-full h-full object-contain p-1" />
           </div>
           <span className="text-xl font-bold tracking-tight text-slate-900 hidden sm:block uppercase">
-            MASTER CHESS <span className="text-primary italic font-black">ACADEMY</span>
+            MASTERS CHESS <span className="text-primary italic font-black">ACADEMY</span>
           </span>
         </motion.div>
 
