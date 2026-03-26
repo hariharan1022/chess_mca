@@ -37,7 +37,11 @@ export function AuthModal({ isOpen, onClose, initialView = 'login' }: { isOpen: 
                 <h3 className="text-3xl font-black text-white uppercase tracking-tighter italic">
                   {view === 'login' ? 'STRATEGIC LOGIN' : 'JOIN THE ACADEMY'}
                 </h3>
-                <p className="text-slate-500 text-sm mt-2 font-light">
+                <div className="flex justify-center gap-4 mt-4">
+                  <button className="text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full border border-primary/20 bg-primary/10 text-primary">STUDENT</button>
+                  <button className="text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full border border-white/10 text-slate-500 hover:text-primary transition-colors">ADMIN</button>
+                </div>
+                <p className="text-slate-500 text-sm mt-4 font-light">
                   {view === 'login' ? 'Resume your journey to grandmastery.' : 'Start your professional chess roadmap today.'}
                 </p>
              </div>

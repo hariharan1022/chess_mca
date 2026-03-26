@@ -84,7 +84,7 @@ export function Contact() {
 
             <div className="space-y-8">
               {[
-                { icon: <Mail className="text-primary w-6 h-6" />, label: "Email Us", value: "hello@masterchess.com" },
+                { icon: <Mail className="text-primary w-6 h-6" />, label: "Email Us", value: "hariharnmahesh34@gmail.com" },
                 { icon: <PhoneCall className="text-primary w-6 h-6" />, label: "Call Us", value: "+1 (555) 000-0000" },
                 { icon: <MapPin className="text-primary w-6 h-6" />, label: "Main Office", value: "Chennai, India" }
               ].map((item, i) => (

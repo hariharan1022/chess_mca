@@ -97,9 +97,9 @@ export function Footer() {
                   <div className="p-2 bg-white border border-slate-100 rounded-lg shadow-sm group-hover:border-primary/30"><Phone className="w-3 h-3 text-primary" /></div>
                   +91 98765 43210
                </a>
-               <a href="mailto:admin@masterchess.com" className="flex items-center gap-4 text-sm font-medium text-slate-500 hover:text-primary transition-colors group italic">
+               <a href="mailto:hariharnmahesh34@gmail.com" className="flex items-center gap-4 text-sm font-medium text-slate-500 hover:text-primary transition-colors group italic">
                   <div className="p-2 bg-white border border-slate-100 rounded-lg shadow-sm group-hover:border-primary/30"><Mail className="w-3 h-3 text-primary" /></div>
-                  admin@masterchess.com
+                  hariharnmahesh34@gmail.com
                </a>
             </div>
 
