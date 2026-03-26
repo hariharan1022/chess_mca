@@ -11,7 +11,7 @@ import { Puzzles } from './components/sections/Puzzles'
 import { Contact } from './components/sections/Contact'
 import { Footer } from './components/layout/Footer'
 import { Gallery } from './components/sections/Gallery'
-import { GraduationCap, Trophy, MessageSquare, Globe, Target } from 'lucide-react'
+import { GraduationCap, Trophy, MessageSquare, Globe, Target, Star } from 'lucide-react'
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -158,20 +158,107 @@ function StateCommunity() {
   );
 }
 
+function ParentReviews() {
+  const reviews = [
+    {
+      name: "Senthil Kumar",
+      role: "Parent",
+      text: "One of the best chess academies in Pudukkottai. My son drastically improved his concentration and logical thinking. The trainers are very professional.",
+      rating: 5,
+      date: "2 months ago"
+    },
+    {
+      name: "Priya Rajesh",
+      role: "Parent",
+      text: "Master Chess Academy is excellent for beginners. The curriculum is well-structured and the regular testing keeps students motivated. Highly recommended!",
+      rating: 5,
+      date: "1 month ago"
+    },
+    {
+      name: "Anand V",
+      role: "Parent",
+      text: "Friendly coaches and competitive environment. Both Kamarajapuram and Periyar Nagar branches are well-maintained. Best academy for District level players.",
+      rating: 5,
+      date: "3 months ago"
+    }
+  ];
+
+  return (
+    <section className="py-10 md:py-20 bg-white">
+      <div className="container mx-auto px-6">
+        <div className="flex flex-col md:flex-row items-center justify-between mb-12 md:mb-16 gap-6">
+          <div className="text-center md:text-left">
+            <h2 className="text-2xl md:text-5xl font-black text-slate-900 uppercase tracking-tighter italic mb-4">
+              PARENTS <span className="text-primary italic">TRUST</span>
+            </h2>
+            <div className="flex items-center gap-2 justify-center md:justify-start">
+              <div className="flex text-primary">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-current" />
+                ))}
+              </div>
+              <span className="text-sm font-black text-slate-900">4.4 / 5.0</span>
+              <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">(GOOGLE REVIEWS)</span>
+            </div>
+          </div>
+          <button 
+            onClick={() => window.open('https://www.google.com/search?q=Master+Chess+Academy+Pudukkottai+reviews', '_blank')}
+            className="px-8 py-3 bg-white border border-slate-200 rounded-full text-[10px] font-black uppercase tracking-widest hover:border-primary transition-all shadow-sm"
+          >
+            VIEW ALL REVIEWS
+          </button>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          {reviews.map((rev, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.1 }}
+              className="p-8 rounded-3xl border border-slate-100 bg-slate-50/50 hover:bg-white hover:shadow-2xl hover:shadow-slate-200/50 transition-all group"
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-black">
+                  {rev.name[0]}
+                </div>
+                <div>
+                  <h4 className="text-sm font-black text-slate-900 uppercase tracking-tight">{rev.name}</h4>
+                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{rev.role}</p>
+                </div>
+              </div>
+              <div className="flex text-primary mb-4 gap-0.5">
+                {[...Array(rev.rating)].map((_, i) => (
+                  <Star key={i} className="w-3 h-3 fill-current" />
+                ))}
+              </div>
+              <p className="text-slate-600 text-sm leading-relaxed font-medium italic mb-6 group-hover:text-slate-900 transition-colors">
+                "{rev.text}"
+              </p>
+              <span className="text-[10px] font-bold text-slate-300 uppercase tracking-widest">{rev.date}</span>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Home() {
   return (
     <>
       <Hero />
       <StateCommunity />
+      <ParentReviews />
       <StudentsPride />
       <CoursesShort />
       
-      <div className="container mx-auto px-6 py-20 md:py-40 text-center relative overflow-hidden group bg-white">
+      <div className="container mx-auto px-6 py-10 md:py-40 text-center relative overflow-hidden group bg-white">
          <div className="absolute inset-0 bg-primary/5 blur-[100px] md:blur-[150px] opacity-0 group-hover:opacity-100 transition-opacity -z-10" />
          <motion.h2 
            whileInView={{ scale: [0.95, 1, 0.95] }}
            transition={{ repeat: Infinity, duration: 4 }}
-           className="text-3xl md:text-7xl font-black text-slate-900 leading-tight uppercase tracking-tighter mb-8 md:mb-12 italic"
+           className="text-2xl md:text-7xl font-black text-slate-900 leading-tight uppercase tracking-tighter mb-6 md:mb-12 italic"
          >
            THE <span className="text-primary italic">BOARD</span> IS <br className="hidden md:block" />
            WAITING FOR <span className="text-primary italic">YOU</span>

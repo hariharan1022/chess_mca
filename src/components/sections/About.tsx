@@ -54,10 +54,10 @@ export function About() {
             >
               <Target className="w-10 h-10 md:w-14 md:h-14 text-primary" />
             </motion.div>
-            <h2 className="text-5xl md:text-9xl font-black text-slate-900 uppercase tracking-tighter italic mb-8 md:mb-12 leading-none">
+            <h2 className="text-3xl md:text-9xl font-black text-slate-900 uppercase tracking-tighter italic mb-4 md:mb-12 leading-none">
               OUR <span className="text-primary italic font-black">MISSION</span>
             </h2>
-            <p className="text-slate-700 max-w-4xl font-medium text-xl sm:text-2xl md:text-4xl leading-tight italic px-4 md:px-0 mb-12 md:mb-20">
+            <p className="text-slate-700 max-w-4xl font-medium text-lg sm:text-2xl md:text-4xl leading-tight italic px-2 md:px-0 mb-8 md:mb-20">
               "To democratize elite chess education by blending <span className="text-slate-900 font-bold">ancient wisdom</span> with <span className="text-primary font-bold italic">modern technology</span>, creating a community arena where every child can master the art of strategy."
             </p>
 

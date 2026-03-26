@@ -99,7 +99,7 @@ const coursesData = [
 ];
 
 const StateBenefits = () => (
-  <section className="py-12 md:py-24 bg-black text-white relative overflow-hidden">
+  <section className="py-8 md:py-24 bg-black text-white relative overflow-hidden">
      <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${bgBanner2})` }}
@@ -107,7 +107,7 @@ const StateBenefits = () => (
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/50 to-black/80" />
      </div>
      <div className="container px-4 md:px-6 mx-auto relative z-10 text-center">
-        <h2 className="text-xl md:text-4xl font-black uppercase italic tracking-tighter mb-8 md:mb-12 leading-tight text-white">BENEFITS OF <span className="text-primary italic">PLAYING CHESS</span></h2>
+        <h2 className="text-lg md:text-4xl font-black uppercase italic tracking-tighter mb-6 md:mb-12 leading-tight text-white">BENEFITS OF <span className="text-primary italic">PLAYING CHESS</span></h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
            {[
              { icon: <Brain className="w-6 h-6 md:w-8 md:h-8" />, title: "Boost IQ", desc: "Scientific studies show chess increases cognitive power and memory." },
@@ -151,10 +151,10 @@ export function Courses() {
             >
               <Shield className="w-4 h-4" /> ACADEMIC ROADMAP
             </motion.div>
-            <h1 className="text-5xl md:text-9xl font-black text-slate-900 uppercase tracking-tighter italic mb-8 md:mb-12 leading-none">
+            <h1 className="text-3xl md:text-9xl font-black text-slate-900 uppercase tracking-tighter italic mb-4 md:mb-12 leading-none">
               THE <span className="text-primary italic font-black">ACADEMY</span> <br /> ROADMAP
             </h1>
-            <p className="text-slate-600 max-w-2xl font-medium text-xl md:text-2xl italic leading-relaxed tracking-wide px-4 md:px-0">
+            <p className="text-slate-600 max-w-2xl font-medium text-lg md:text-2xl italic leading-relaxed tracking-wide px-2 md:px-0">
               Our data-driven curriculum, refined over 6 years and trusted by <span className="text-primary font-bold italic">100+ students</span>, is presented below in three comprehensive phases.
             </p>
           </div>

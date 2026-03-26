@@ -50,11 +50,11 @@ export function Contact() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-5xl md:text-9xl font-black text-slate-900 mb-8 uppercase tracking-tighter italic leading-none"
+              className="text-3xl md:text-9xl font-black text-slate-900 mb-4 uppercase tracking-tighter italic leading-none"
             >
               LET'S <span className="text-primary italic font-black">CONNECT</span>
             </motion.h2>
-            <p className="text-slate-700 max-w-2xl font-medium text-xl md:text-2xl px-4 md:px-0 leading-relaxed italic">
+            <p className="text-slate-700 max-w-2xl font-medium text-lg md:text-2xl px-2 md:px-0 leading-relaxed italic">
               Ready for your next big move? Reach out to our grandmasters and start your journey with <span className="text-primary font-black uppercase tracking-widest not-italic italic">Master Chess Academy</span>.
             </p>
           </div>
