@@ -51,7 +51,7 @@ export function Trainers() {
   return (
     <section id="trainers" className="flex flex-col bg-white overflow-hidden">
       {/* Cinematic Header for Trainers */}
-      <section className="min-h-[45vh] md:min-h-screen flex flex-col items-center justify-center pt-24 md:pt-40 text-center relative overflow-hidden bg-white">
+      <section className="min-h-[30vh] md:min-h-screen flex flex-col items-center justify-center pt-24 md:pt-40 text-center relative overflow-hidden bg-white">
         {/* Full-Color Backdrop Banner - Unique Image */}
         <div className="absolute inset-0 z-0">
           <img 
