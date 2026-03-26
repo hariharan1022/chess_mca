@@ -1,22 +1,22 @@
+/// <reference types="vite/client" />
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ZoomIn } from 'lucide-react';
 import bgBanner3 from '@/assets/background banner/digital-art-style-abstract-chess-pieces.jpg';
 
-// Using a more robust, simple approach for image discovery to avoid runtime glob resolution errors
-const academyImages = [
-  { url: "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?auto=format&fit=crop&q=80&w=1000", title: "Strategy Session" },
-  { url: "https://images.unsplash.com/photo-1544411047-c4915842271e?auto=format&fit=crop&q=80&w=1000", title: "Master Calculation" },
-  { url: "https://images.unsplash.com/photo-1586165368502-1bad197a0469?auto=format&fit=crop&q=80&w=1000", title: "Elite Mastery" },
-  { url: "https://images.unsplash.com/photo-1511891535722-171421127395?auto=format&fit=crop&q=80&w=1000", title: "Professional Prep" }
-];
+// Vite glob imports for dynamic image discovery
+const academyImageModules = (import.meta as any).glob('@/assets/gallery/academy/*.{jpeg,jpg,png,JPG}', { eager: true, query: '?url', import: 'default' });
+const championshipImageModules = (import.meta as any).glob('@/assets/gallery/championships/*.{jpeg,jpg,png,JPG}', { eager: true, query: '?url', import: 'default' });
 
-const championshipImages = [
-  { url: "https://images.unsplash.com/photo-1528819622765-d6bcf132f793?auto=format&fit=crop&q=80&w=1000", title: "National Victory" },
-  { url: "https://images.unsplash.com/photo-1511891535722-171421127395?auto=format&fit=crop&q=80&w=1000", title: "Championship Spirit" },
-  { url: "https://images.unsplash.com/photo-1523875194681-bedd468c58bf?auto=format&fit=crop&q=80&w=1000", title: "Strategic Win" },
-  { url: "https://images.unsplash.com/photo-1580541832626-2a7131ee809f?auto=format&fit=crop&q=80&w=1000", title: "Glory Moment" }
-];
+const academyImages = Object.entries(academyImageModules).map(([path, url]) => ({
+  url: url as string,
+  title: path.split('/').pop()?.replace(/WhatsApp Image.*?at\s+/i, '').split('.')[0] || "Academy Moment"
+}));
+
+const championshipImages = Object.entries(championshipImageModules).map(([path, url]) => ({
+  url: url as string,
+  title: path.split('/').pop()?.replace(/WhatsApp Image.*?at\s+/i, '').split('.')[0] || "Championship Glory"
+}));
 
 export function Gallery() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
