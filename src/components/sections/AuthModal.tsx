@@ -3,10 +3,51 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Mail, Lock, User, ChevronRight, Github, Twitter } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { cn } from '@/lib/utils';
+import { supabase } from '@/lib/supabase';
 
 export function AuthModal({ isOpen, onClose, initialView = 'login' }: { isOpen: boolean, onClose: () => void, initialView?: 'login' | 'signup' }) {
   const [view, setView] = useState(initialView);
   const [role, setRole] = useState<'student' | 'admin'>('student');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleAuth = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+
+    try {
+      if (view === 'signup') {
+        const { error } = await supabase.auth.signUp({
+          email,
+          password,
+          options: {
+            data: {
+              full_name: name,
+              role: role,
+            }
+          }
+        });
+        if (error) throw error;
+        alert('Check your email for the confirmation link!');
+        onClose();
+      } else {
+        const { error } = await supabase.auth.signInWithPassword({
+          email,
+          password,
+        });
+        if (error) throw error;
+        onClose();
+      }
+    } catch (err: any) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <AnimatePresence>
@@ -66,46 +107,74 @@ export function AuthModal({ isOpen, onClose, initialView = 'login' }: { isOpen: 
                 </p>
              </div>
 
-             <form className="space-y-6">
-                {view === 'signup' && (
-                  <div className="space-y-2 group">
-                    <label className="text-[10px] font-black uppercase tracking-widest text-slate-500 ml-1 group-focus-within:text-primary transition-colors">
-                      Your Identity
-                    </label>
-                    <div className="relative">
-                      <User className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-600 w-4 h-4" />
-                      <input type="text" placeholder="Future Champion Name" className="w-full bg-white/5 border border-white/10 rounded-xl px-12 py-3.5 text-white text-sm focus:outline-none focus:border-primary transition-all" />
-                    </div>
-                  </div>
-                )}
-                
-                <div className="space-y-2 group">
-                  <label className="text-[10px] font-black uppercase tracking-widest text-slate-500 ml-1 group-focus-within:text-primary transition-colors">
-                    Intelligence Portal
-                  </label>
-                  <div className="relative">
-                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-600 w-4 h-4" />
-                    <input type="email" placeholder="grandmaster@chess.com" className="w-full bg-white/5 border border-white/10 rounded-xl px-12 py-3.5 text-white text-sm focus:outline-none focus:border-primary transition-all" />
-                  </div>
-                </div>
+              <form onSubmit={handleAuth} className="space-y-6">
+                 {view === 'signup' && (
+                   <div className="space-y-2 group">
+                     <label className="text-[10px] font-black uppercase tracking-widest text-slate-500 ml-1 group-focus-within:text-primary transition-colors">
+                       Your Identity
+                     </label>
+                     <div className="relative">
+                       <User className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-600 w-4 h-4" />
+                       <input 
+                        type="text" 
+                        placeholder="Future Champion Name" 
+                        className="w-full bg-white/5 border border-white/10 rounded-xl px-12 py-3.5 text-white text-sm focus:outline-none focus:border-primary transition-all"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        required
+                       />
+                     </div>
+                   </div>
+                 )}
+                 
+                 <div className="space-y-2 group">
+                   <label className="text-[10px] font-black uppercase tracking-widest text-slate-500 ml-1 group-focus-within:text-primary transition-colors">
+                     Intelligence Portal
+                   </label>
+                   <div className="relative">
+                     <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-600 w-4 h-4" />
+                     <input 
+                      type="email" 
+                      placeholder="grandmaster@chess.com" 
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-12 py-3.5 text-white text-sm focus:outline-none focus:border-primary transition-all"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                     />
+                   </div>
+                 </div>
+ 
+                 <div className="space-y-2 group">
+                   <div className="flex items-center justify-between ml-1">
+                     <label className="text-[10px] font-black uppercase tracking-widest text-slate-500 group-focus-within:text-primary transition-colors">
+                       Secure Code
+                     </label>
+                     {view === 'login' && <a href="#" className="text-[10px] text-primary hover:underline font-bold tracking-widest uppercase">Lost Strategy?</a>}
+                   </div>
+                   <div className="relative">
+                     <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-600 w-4 h-4" />
+                     <input 
+                      type="password" 
+                      placeholder="••••••••" 
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-12 py-3.5 text-white text-sm focus:outline-none focus:border-primary transition-all"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      required
+                     />
+                   </div>
+                 </div>
 
-                <div className="space-y-2 group">
-                  <div className="flex items-center justify-between ml-1">
-                    <label className="text-[10px] font-black uppercase tracking-widest text-slate-500 group-focus-within:text-primary transition-colors">
-                      Secure Code
-                    </label>
-                    {view === 'login' && <a href="#" className="text-[10px] text-primary hover:underline font-bold tracking-widest uppercase">Lost Strategy?</a>}
-                  </div>
-                  <div className="relative">
-                    <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-600 w-4 h-4" />
-                    <input type="password" placeholder="••••••••" className="w-full bg-white/5 border border-white/10 rounded-xl px-12 py-3.5 text-white text-sm focus:outline-none focus:border-primary transition-all" />
-                  </div>
-                </div>
-
-                <Button variant="gold" className="w-full py-4 font-black uppercase tracking-widest shadow-lg shadow-primary/20">
-                  {view === 'login' ? 'ACCESS DASHBOARD' : 'CREATE ACCOUNT'} <ChevronRight className="ml-2 w-4 h-4" />
-                </Button>
-             </form>
+                 {error && <p className="text-red-500 text-[10px] font-bold uppercase tracking-widest text-center">{error}</p>}
+ 
+                 <Button 
+                  type="submit"
+                  disabled={loading}
+                  variant="gold" 
+                  className="w-full py-4 font-black uppercase tracking-widest shadow-lg shadow-primary/20"
+                 >
+                   {loading ? 'PROCESSING...' : (view === 'login' ? 'ACCESS DASHBOARD' : 'CREATE ACCOUNT')} <ChevronRight className="ml-2 w-4 h-4" />
+                 </Button>
+              </form>
 
              <div className="mt-8">
                 <div className="flex items-center gap-4 mb-8">
