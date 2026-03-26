@@ -93,9 +93,9 @@ export function Footer() {
             </h4>
             
             <div className="space-y-4 mb-6">
-               <a href="tel:+919876543210" className="flex items-center gap-4 text-sm font-medium text-slate-500 hover:text-primary transition-colors group italic">
+               <a href="tel:9629399085" className="flex items-center gap-4 text-sm font-medium text-slate-500 hover:text-primary transition-colors group italic">
                   <div className="p-2 bg-white border border-slate-100 rounded-lg shadow-sm group-hover:border-primary/30"><Phone className="w-3 h-3 text-primary" /></div>
-                  +91 98765 43210
+                  +91 96293 99085
                </a>
                <a href="mailto:hariharnmahesh34@gmail.com" className="flex items-center gap-4 text-sm font-medium text-slate-500 hover:text-primary transition-colors group italic">
                   <div className="p-2 bg-white border border-slate-100 rounded-lg shadow-sm group-hover:border-primary/30"><Mail className="w-3 h-3 text-primary" /></div>

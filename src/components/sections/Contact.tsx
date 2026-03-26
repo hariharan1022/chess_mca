@@ -10,10 +10,17 @@ export function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    
+    // Prepare WhatsApp message
+    const message = `Hello Master Chess Academy,\n\nName: ${formState.name}\nEmail: ${formState.email}\nMessage: ${formState.message}`;
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/9629399085?text=${encodedMessage}`;
+    
+    // Redirect after a small delay
     setTimeout(() => {
       setIsSubmitting(false);
-      alert('Message sent successfully! Our grandmasters will reach out shortly.');
-    }, 1500);
+      window.open(whatsappUrl, '_blank');
+    }, 1000);
   };
 
   return (
@@ -85,7 +92,7 @@ export function Contact() {
             <div className="space-y-8">
               {[
                 { icon: <Mail className="text-primary w-6 h-6" />, label: "Email Us", value: "hariharnmahesh34@gmail.com" },
-                { icon: <PhoneCall className="text-primary w-6 h-6" />, label: "Call Us", value: "+1 (555) 000-0000" },
+                { icon: <PhoneCall className="text-primary w-6 h-6" />, label: "Call Us", value: "+91 96293 99085" },
                 { icon: <MapPin className="text-primary w-6 h-6" />, label: "Main Office", value: "Chennai, India" }
               ].map((item, i) => (
                 <motion.div
