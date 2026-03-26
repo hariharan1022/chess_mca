@@ -71,8 +71,8 @@ export function Hero() {
           {/* Clean Stats Row */}
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 sm:gap-8 md:gap-16 pt-8 md:pt-12 border-t border-slate-100 w-full">
             {[
-              { label: "Champions", val: "10K+" },
-              { label: "Trainers", val: "100+" },
+              { label: "Students", val: "100+" },
+              { label: "Coaches", val: "10+" },
               { label: "Districts", val: "25+" },
               { label: "Rating", val: "4.9/5" }
             ].map((s, i) => (

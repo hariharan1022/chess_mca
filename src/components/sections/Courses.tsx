@@ -34,7 +34,7 @@ const coursesData = [
     ],
     whyChooseUs: 'Our beginner program uses interactive visualized tools that make the complex rules of chess intuitive and fun for kids and adults alike.',
     image: bgBanner1,
-    stats: { puzzles: '500+', duration: '3 Months', students: '5000+' }
+    stats: { puzzles: '500+', duration: '3 Months', students: '100+' }
   },
   {
     id: 'intermediate',
@@ -64,7 +64,7 @@ const coursesData = [
     ],
     whyChooseUs: 'We use Grandmaster-level analysis software and personalized feedback to identify and fix your persistent tactical blindspots.',
     image: bgBanner2,
-    stats: { puzzles: '2000+', duration: '6 Months', students: '3500+' }
+    stats: { puzzles: '2000+', duration: '6 Months', students: '100+' }
   },
   {
     id: 'advanced',
@@ -94,7 +94,7 @@ const coursesData = [
     ],
     whyChooseUs: 'Direct access to expert District and State level trainers. You aren\'t just a student; you are an apprentice to true experts.',
     image: bgBanner3,
-    stats: { puzzles: '4000+', duration: '1 Year', students: '1500+' }
+    stats: { puzzles: '4000+', duration: '1 Year', students: '100+' }
   }
 ];
 
@@ -263,7 +263,7 @@ export function Courses() {
                  <div className="pt-8 md:pt-10 flex flex-col sm:flex-row items-center justify-between gap-6 md:gap-8 border-t border-slate-100">
                     <div className="text-center sm:text-left">
                         <div className="text-[8px] md:text-[10px] font-black text-slate-400 mb-1 uppercase tracking-widest">STARTING AT</div>
-                        <div className="text-3xl md:text-4xl font-black text-slate-900 uppercase tracking-tighter italic leading-none">$299<span className="text-xs md:text-sm font-bold text-slate-400 italic">/PROGRAM</span></div>
+                        <div className="text-3xl md:text-4xl font-black text-slate-900 uppercase tracking-tighter italic leading-none">₹1300<span className="text-xs md:text-sm font-bold text-slate-400 italic">/PROGRAM</span></div>
                     </div>
                     <Button size="lg" className="w-full sm:w-auto px-10 md:px-12 py-5 md:py-7 rounded-2xl bg-slate-900 hover:bg-primary text-white font-black uppercase tracking-widest shadow-2xl shadow-slate-200 transition-all group text-xs md:text-sm">
                        ENROLL IN {course.level} <TrendingUp className="ml-2 md:ml-3 w-4 h-4 group-hover:translate-x-1 transition-transform" />

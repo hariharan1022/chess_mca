@@ -22,7 +22,7 @@ const trainers = [
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400",
     experience: "8+ Years",
     specialization: "Psychological Preparation & Middle Game",
-    students: "800+",
+    students: "100+",
     fide: "2300+"
   },
   {
@@ -32,7 +32,7 @@ const trainers = [
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400",
     experience: "10+ Years",
     specialization: "Endgame Mastery & Positional Play",
-    students: "1200+",
+    students: "100+",
     fide: "2450+"
   },
   {

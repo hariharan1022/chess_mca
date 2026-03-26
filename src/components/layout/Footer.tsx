@@ -108,7 +108,7 @@ export function Footer() {
                   <div className="text-primary p-2.5 bg-primary/10 rounded-full shadow-inner"><Heart className="w-5 h-5 fill-primary" /></div>
                   <div>
                      <h5 className="text-[10px] font-black text-slate-900 italic uppercase tracking-widest leading-none mb-1.5">CULTIVATING LEGENDS</h5>
-                     <p className="text-[9px] text-slate-500 uppercase tracking-widest font-bold">Trusted by 10k+ Parents</p>
+                     <p className="text-[9px] text-slate-500 uppercase tracking-widest font-bold">Trusted by 100+ Parents</p>
                   </div>
                </div>
                <p className="text-[10px] text-slate-400 font-medium leading-relaxed italic border-t border-slate-100 pt-3 mt-3">Developing elite analytical skills through State and District chess standards.</p>
