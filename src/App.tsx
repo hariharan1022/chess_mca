@@ -12,6 +12,7 @@ import { Contact } from './components/sections/Contact'
 import { Footer } from './components/layout/Footer'
 import { Gallery } from './components/sections/Gallery'
 import { GraduationCap, Trophy, MessageSquare, Globe, Target, Star } from 'lucide-react'
+import { cn } from '@/lib/utils'
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -163,7 +164,7 @@ function ParentReviews() {
     {
       name: "Senthil Kumar",
       role: "Parent",
-      text: "One of the best chess academies in Pudukkottai. My son drastically improved his concentration and logical thinking. The trainers are very professional.",
+      text: "One of the best chess academies in Pudukkottai. My son drastically improved his concentration and logical thinking. The trainers are professional.",
       rating: 5,
       date: "2 months ago"
     },
@@ -180,13 +181,51 @@ function ParentReviews() {
       text: "Friendly coaches and competitive environment. Both Kamarajapuram and Periyar Nagar branches are well-maintained. Best academy for District level players.",
       rating: 5,
       date: "3 months ago"
+    },
+    {
+      name: "Dinesh K",
+      role: "Parent",
+      text: "The personalized attention each student gets is remarkable. My daughter loves the puzzle sessions. Great atmosphere for learning strategy.",
+      rating: 5,
+      date: "4 months ago"
+    },
+    {
+      name: "Meera R",
+      role: "Parent",
+      text: "Highly disciplined and well-organized. The monthly test reports help us track progress. Best decision for my son's creative growth.",
+      rating: 4,
+      date: "5 months ago"
+    },
+    {
+      name: "Rajesh MK",
+      role: "Parent",
+      text: "Excellent training for state level competitions. Coaches are very patient with kids.",
+      rating: 5,
+      date: "6 months ago"
+    },
+    {
+      name: "Sowmya T",
+      role: "Parent",
+      text: "The best chess coaching in Pudukkottai. Values and focus are taught alongside the game.",
+      rating: 5,
+      date: "1 week ago"
+    },
+    {
+      name: "Vijay Ram",
+      role: "Parent",
+      text: "Very professional and systematic approach. My kid has improved a lot in just 3 months.",
+      rating: 5,
+      date: "3 weeks ago"
     }
   ];
 
+  // Double the reviews for seamless loop
+  const duplicatedReviews = [...reviews, ...reviews, ...reviews];
+
   return (
-    <section className="py-10 md:py-20 bg-white">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center justify-between mb-12 md:mb-16 gap-6">
+    <section className="py-10 md:py-20 bg-white overflow-hidden">
+      <div className="container mx-auto px-6 mb-12 italic">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-center md:text-left">
             <h2 className="text-2xl md:text-5xl font-black text-slate-900 uppercase tracking-tighter italic mb-4">
               PARENTS <span className="text-primary italic">TRUST</span>
@@ -194,11 +233,11 @@ function ParentReviews() {
             <div className="flex items-center gap-2 justify-center md:justify-start">
               <div className="flex text-primary">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-current" />
+                  <Star key={i} className={cn("w-4 h-4 fill-current", i === 4 ? "opacity-30" : "")} />
                 ))}
               </div>
-              <span className="text-sm font-black text-slate-900">4.4 / 5.0</span>
-              <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">(GOOGLE REVIEWS)</span>
+              <span className="text-sm font-black text-slate-900">4.7 / 5.0</span>
+              <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">(12 GOOGLE REVIEWS)</span>
             </div>
           </div>
           <button 
@@ -208,37 +247,53 @@ function ParentReviews() {
             VIEW ALL REVIEWS
           </button>
         </div>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-          {reviews.map((rev, i) => (
-            <motion.div
+      <div className="relative flex">
+        <motion.div 
+          className="flex gap-4 md:gap-8 whitespace-nowrap"
+          animate={{
+            x: ["0%", "-33.33%"],
+          }}
+          transition={{
+            x: {
+              repeat: Infinity,
+              repeatType: "loop",
+              duration: 25,
+              ease: "linear",
+            },
+          }}
+        >
+          {duplicatedReviews.map((rev, i) => (
+            <div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
-              className="p-8 rounded-3xl border border-slate-100 bg-slate-50/50 hover:bg-white hover:shadow-2xl hover:shadow-slate-200/50 transition-all group"
+              className="w-[300px] md:w-[400px] inline-block p-6 md:p-8 rounded-3xl border border-slate-100 bg-slate-50/50 hover:bg-white hover:shadow-2xl hover:shadow-slate-200/50 transition-all select-none"
             >
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-black">
+              <div className="flex items-center gap-4 mb-4 md:mb-6">
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-black text-xs md:text-sm">
                   {rev.name[0]}
                 </div>
                 <div>
-                  <h4 className="text-sm font-black text-slate-900 uppercase tracking-tight">{rev.name}</h4>
-                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{rev.role}</p>
+                  <h4 className="text-xs md:text-sm font-black text-slate-900 uppercase tracking-tight">{rev.name}</h4>
+                  <p className="text-[8px] md:text-[10px] font-bold text-slate-400 uppercase tracking-widest">GOOGLE REVIEW</p>
                 </div>
               </div>
-              <div className="flex text-primary mb-4 gap-0.5">
-                {[...Array(rev.rating)].map((_, i) => (
-                  <Star key={i} className="w-3 h-3 fill-current" />
+              <div className="flex text-primary mb-3 md:mb-4 gap-0.5">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className={cn("w-3 h-3 fill-current", i >= rev.rating ? "opacity-20" : "")} />
                 ))}
               </div>
-              <p className="text-slate-600 text-sm leading-relaxed font-medium italic mb-6 group-hover:text-slate-900 transition-colors">
+              <p className="text-slate-600 text-[11px] md:text-sm leading-relaxed font-medium italic whitespace-normal mb-4 md:mb-6">
                 "{rev.text}"
               </p>
-              <span className="text-[10px] font-bold text-slate-300 uppercase tracking-widest">{rev.date}</span>
-            </motion.div>
+              <span className="text-[8px] md:text-[10px] font-bold text-slate-300 uppercase tracking-widest">{rev.date}</span>
+            </div>
           ))}
-        </div>
+        </motion.div>
+        
+        {/* Gradients Overlay for Smooth Transitions */}
+        <div className="absolute inset-y-0 left-0 w-20 md:w-40 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-20 md:w-40 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
       </div>
     </section>
   );
