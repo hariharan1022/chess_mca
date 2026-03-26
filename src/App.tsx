@@ -8,7 +8,6 @@ import { About } from './components/sections/About'
 import { Courses } from './components/sections/Courses'
 import { Trainers } from './components/sections/Trainers'
 import { Puzzles } from './components/sections/Puzzles'
-import { DashboardMockup } from './components/sections/Dashboard'
 import { Contact } from './components/sections/Contact'
 import { Footer } from './components/layout/Footer'
 import { Gallery } from './components/sections/Gallery'
@@ -183,7 +182,10 @@ function Home() {
            viewport={{ once: true }}
            className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center"
          >
-            <button className="w-full sm:w-auto bg-primary hover:bg-accent text-white text-lg md:text-xl font-black px-10 md:px-12 py-4 md:py-5 rounded-2xl shadow-xl shadow-primary/20 transition-all hover:scale-105 active:scale-95 uppercase tracking-widest border-none">
+            <button 
+              className="w-full sm:w-auto bg-primary hover:bg-accent text-white text-lg md:text-xl font-black px-10 md:px-12 py-4 md:py-5 rounded-2xl shadow-xl shadow-primary/20 transition-all hover:scale-105 active:scale-95 uppercase tracking-widest border-none"
+              onClick={() => window.open('https://wa.me/9629399085?text=Hello! I would like to join the elite at Master Chess Academy.', '_blank')}
+            >
               JOIN THE ELITE
             </button>
             <div className="text-slate-400 font-bold uppercase tracking-[0.2em] text-[10px] md:text-sm">
@@ -226,7 +228,6 @@ function App() {
             <Route path="/trainers" element={<PageWrapper><Trainers /></PageWrapper>} />
             <Route path="/gallery" element={<PageWrapper><Gallery /></PageWrapper>} />
             <Route path="/puzzles" element={<PageWrapper><Puzzles /></PageWrapper>} />
-            <Route path="/dashboard" element={<PageWrapper><DashboardMockup /></PageWrapper>} />
             <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
           </Routes>
         </AnimatePresence>

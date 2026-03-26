@@ -58,7 +58,11 @@ export function Hero() {
             transition={{ delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-6 items-center w-full sm:w-auto"
           >
-            <Button size="lg" className="w-full sm:w-auto px-12 md:px-16 group bg-primary text-white hover:bg-slate-900 transition-all font-black uppercase tracking-widest py-7 md:py-8 shadow-2xl shadow-primary/30 border-none rounded-2xl">
+            <Button 
+              size="lg" 
+              className="w-full sm:w-auto px-12 md:px-16 group bg-primary text-white hover:bg-slate-900 transition-all font-black uppercase tracking-widest py-7 md:py-8 shadow-2xl shadow-primary/30 border-none rounded-2xl"
+              onClick={() => window.open('https://wa.me/9629399085?text=Hello! I would like to start my chess journey with Master Chess Academy.', '_blank')}
+            >
               START JOURNEY <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Link to="/courses" className="w-full sm:w-auto">

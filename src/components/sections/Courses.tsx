@@ -265,7 +265,11 @@ export function Courses() {
                         <div className="text-[8px] md:text-[10px] font-black text-slate-400 mb-1 uppercase tracking-widest">STARTING AT</div>
                         <div className="text-3xl md:text-4xl font-black text-slate-900 uppercase tracking-tighter italic leading-none">₹1300<span className="text-xs md:text-sm font-bold text-slate-400 italic">/MONTH</span></div>
                     </div>
-                    <Button size="lg" className="w-full sm:w-auto px-10 md:px-12 py-5 md:py-7 rounded-2xl bg-slate-900 hover:bg-primary text-white font-black uppercase tracking-widest shadow-2xl shadow-slate-200 transition-all group text-xs md:text-sm">
+                    <Button 
+                      size="lg" 
+                      className="w-full sm:w-auto px-10 md:px-12 py-5 md:py-7 rounded-2xl bg-slate-900 hover:bg-primary text-white font-black uppercase tracking-widest shadow-2xl shadow-slate-200 transition-all group text-xs md:text-sm"
+                      onClick={() => window.open(`https://wa.me/9629399085?text=Hello! I would like to enroll in the ${course.level} program at Master Chess Academy.`, '_blank')}
+                    >
                        ENROLL IN {course.level} <TrendingUp className="ml-2 md:ml-3 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Button>
                  </div>
