@@ -64,31 +64,36 @@ export function Puzzles() {
           >
             <div className="absolute inset-0 bg-primary/20 blur-[120px] rounded-full opacity-30" />
             
-            <div className="glass-card p-8 border-white/10 relative z-10 bg-black/40 shadow-2xl overflow-hidden group">
-               <div className="aspect-square bg-white/5 rounded-xl mb-8 flex items-center justify-center relative overflow-hidden">
-                  {/* Mock Chess Board */}
-                  <div className="grid grid-cols-8 grid-rows-8 w-full h-full opacity-20">
+             <div className="glass-card p-4 md:p-8 border-white/10 relative z-10 bg-black/40 shadow-2xl overflow-hidden group rounded-[2.5rem]">
+               <div className="aspect-square bg-slate-900 rounded-3xl mb-8 flex items-center justify-center relative overflow-hidden border border-white/5">
+                  <div className="absolute inset-0 grid grid-cols-8 grid-rows-8 opacity-40">
                      {Array.from({ length: 64 }).map((_, i) => (
-                       <div key={i} className={(Math.floor(i / 8) + i) % 2 === 0 ? 'bg-white/10' : ''} />
+                       <div key={i} className={(Math.floor(i / 8) + i) % 2 === 0 ? 'bg-slate-700' : 'bg-slate-800'} />
                      ))}
                   </div>
-                  <div className="absolute inset-0 flex items-center justify-center flex-col gap-6">
-                     <span className="text-8xl select-none group-hover:scale-110 transition-transform duration-700">♞</span>
-                     <div className="text-[10px] font-black text-primary uppercase tracking-[0.4em] animate-pulse">Your Move</div>
+                  <div className="absolute inset-0 z-10 flex items-center justify-center flex-col gap-4 text-center p-10 bg-black/60 backdrop-blur-[2px]">
+                     <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mb-4 border border-primary/30 animate-pulse">
+                        <Zap className="w-10 h-10 text-primary" />
+                     </div>
+                     <h4 className="text-2xl font-black text-white italic tracking-tighter uppercase mb-2">INTERACTIVE BOARD <br /> <span className="text-primary italic font-black">COMING SOON</span></h4>
+                     <p className="text-xs text-slate-400 font-bold uppercase tracking-widest max-w-[200px]">We are building the ultimate daily puzzle experience for our students.</p>
+                     
+                     <div className="mt-8 px-6 py-2 bg-primary text-white text-[10px] font-black uppercase tracking-[0.4em] rounded-full shadow-lg shadow-primary/20">
+                        BETA IN PROGRESS
+                     </div>
                   </div>
                </div>
                
-               <div className="flex items-start gap-5 p-6 bg-white/5 rounded-xl border border-white/10">
+               <div className="flex items-start gap-5 p-6 bg-white/5 rounded-2xl border border-white/10">
                   <div className="p-3 bg-primary/20 rounded-lg text-primary shrink-0"><Lightbulb className="w-5 h-5" /></div>
                   <div>
-                     <h4 className="text-xs font-black text-white uppercase tracking-widest mb-1">STRATEGIC HINT</h4>
-                     <p className="text-xs text-slate-500 leading-relaxed font-light">{puzzles[activePuzzle].hint}</p>
+                     <h4 className="text-xs font-black text-white uppercase tracking-widest mb-1">STRATEGIC HIGHLIGHT</h4>
+                     <p className="text-xs text-slate-500 leading-relaxed font-light italic">"Chess is 99% tactics. Our upcoming engine will analyze your moves in real-time."</p>
                   </div>
                </div>
                
                <div className="mt-8 flex gap-4">
-                  <Button variant="gold" className="flex-grow font-black uppercase tracking-widest shadow-lg shadow-primary/20">SUBMIT MOVE</Button>
-                  <Button variant="outline" size="icon" className="shrink-0 border-white/10"><HelpCircle className="w-5 h-5" /></Button>
+                  <Button disabled className="flex-grow font-black uppercase tracking-widest bg-slate-800 text-slate-500 border-none opacity-50">BOARD LOCKED</Button>
                </div>
             </div>
           </motion.div>

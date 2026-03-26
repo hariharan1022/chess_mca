@@ -2,9 +2,11 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Mail, Lock, User, ChevronRight, Github, Twitter } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
+import { cn } from '@/lib/utils';
 
 export function AuthModal({ isOpen, onClose, initialView = 'login' }: { isOpen: boolean, onClose: () => void, initialView?: 'login' | 'signup' }) {
   const [view, setView] = useState(initialView);
+  const [role, setRole] = useState<'student' | 'admin'>('student');
 
   return (
     <AnimatePresence>
@@ -35,14 +37,32 @@ export function AuthModal({ isOpen, onClose, initialView = 'login' }: { isOpen: 
                    <User className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="text-3xl font-black text-white uppercase tracking-tighter italic">
-                  {view === 'login' ? 'STRATEGIC LOGIN' : 'JOIN THE ACADEMY'}
-                </h3>
+                   {view === 'login' ? 'STRATEGIC LOGIN' : 'JOIN THE ACADEMY'}
+                 </h3>
                 <div className="flex justify-center gap-4 mt-4">
-                  <button className="text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full border border-primary/20 bg-primary/10 text-primary">STUDENT</button>
-                  <button className="text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full border border-white/10 text-slate-500 hover:text-primary transition-colors">ADMIN</button>
+                  <button 
+                    onClick={() => setRole('student')}
+                    className={cn(
+                      "text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full border transition-all",
+                      role === 'student' ? "border-primary/20 bg-primary/10 text-primary" : "border-white/10 text-slate-500 hover:text-white"
+                    )}
+                  >
+                    STUDENT
+                  </button>
+                  <button 
+                    onClick={() => setRole('admin')}
+                    className={cn(
+                      "text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full border transition-all",
+                      role === 'admin' ? "border-primary/20 bg-primary/10 text-primary" : "border-white/10 text-slate-500 hover:text-white"
+                    )}
+                  >
+                    ADMIN
+                  </button>
                 </div>
                 <p className="text-slate-500 text-sm mt-4 font-light">
-                  {view === 'login' ? 'Resume your journey to grandmastery.' : 'Start your professional chess roadmap today.'}
+                  {view === 'login' 
+                    ? `Resume your ${role} journey to grandmastery.` 
+                    : `Start your professional ${role} roadmap today.`}
                 </p>
              </div>
 
