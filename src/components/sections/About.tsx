@@ -34,7 +34,7 @@ export function About() {
   return (
     <div className="flex flex-col">
       {/* Our Mission Section - Simplified Cinematic Style */}
-      <section className="min-h-[85vh] md:min-h-screen flex flex-col items-center justify-center pt-24 md:pt-40 text-center relative overflow-hidden bg-white">
+      <section className="min-h-[60vh] md:min-h-screen flex flex-col items-center justify-center pt-24 md:pt-40 text-center relative overflow-hidden bg-white">
         {/* Cinematic Backdrop Banner with Full Color */}
         <div className="absolute inset-0 z-0">
           <img

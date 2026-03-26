@@ -8,7 +8,7 @@ export function Hero() {
   const y1 = useTransform(scrollY, [0, 500], [0, 100]);
 
   return (
-    <section className="relative min-h-[90vh] md:min-h-screen flex flex-col items-center justify-center pt-8 md:pt-20 overflow-hidden bg-white">
+    <section className="relative min-h-[60vh] md:min-h-screen flex flex-col items-center justify-center pt-8 md:pt-20 overflow-hidden bg-white">
       
       {/* Cinematic Full Color Background Banner */}
       <div className="absolute inset-0 z-0">

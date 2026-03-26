@@ -26,7 +26,7 @@ export function Contact() {
   return (
     <section id="contact" className="flex flex-col bg-white overflow-hidden">
       {/* Cinematic Header for Contact */}
-      <section className="min-h-[85vh] md:min-h-screen flex flex-col items-center justify-center pt-24 md:pt-40 text-center relative overflow-hidden bg-white">
+      <section className="min-h-[60vh] md:min-h-screen flex flex-col items-center justify-center pt-24 md:pt-40 text-center relative overflow-hidden bg-white">
         {/* Full-Color Backdrop Banner - Unique Image */}
         <div className="absolute inset-0 z-0">
           <img 
