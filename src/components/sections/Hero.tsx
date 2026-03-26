@@ -12,7 +12,13 @@ export function Hero() {
       
       {/* Cinematic Full Color Background Banner */}
       <div className="absolute inset-0 z-0">
-        <motion.div style={{ y: y1 }} className="absolute inset-0">
+        <motion.div 
+          style={{ y: y1 }} 
+          initial={{ scale: 1.1, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          className="absolute inset-0"
+        >
           <img 
             src="https://images.unsplash.com/photo-1529699211952-734e80c4d42b?auto=format&fit=crop&q=80&w=2500" 
             alt="Chess Arena Hero" 
@@ -25,8 +31,9 @@ export function Hero() {
       <div className="container relative z-10 mx-auto px-6">
         <div className="max-w-6xl mx-auto flex flex-col items-center md:items-start text-center md:text-left">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="mb-6 md:mb-8 p-1.5 px-4 md:px-6 bg-primary rounded-full text-white text-[10px] sm:text-xs md:text-sm font-black tracking-[0.2em] md:tracking-[0.4em] inline-flex items-center gap-2 md:gap-3 uppercase shadow-lg shadow-primary/20"
           >
             <Trophy className="w-3 h-3 md:w-4 md:h-4" />
@@ -35,9 +42,9 @@ export function Hero() {
 
           <motion.h1 
             className="text-3xl sm:text-5xl md:text-9xl font-black text-slate-900 leading-[0.95] md:leading-[0.85] mb-4 md:mb-10 uppercase italic tracking-tighter"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
             MASTER THE <br />
             <span className="text-primary italic font-black">ART OF</span> MOVE
@@ -45,9 +52,9 @@ export function Hero() {
 
           <motion.p
             className="text-base sm:text-lg md:text-xl text-slate-700 max-w-2xl font-medium mb-10 md:mb-16 leading-relaxed italic"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           >
             Unlock the genius within. Professional chess training from expert trainers for every aspiring District and State champion.
           </motion.p>
@@ -55,7 +62,7 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-6 items-center w-full sm:w-auto"
           >
             <Button 

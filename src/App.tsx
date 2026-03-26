@@ -343,13 +343,48 @@ function Home() {
   );
 }
 
+const BackgroundEffect = () => {
+  return (
+    <div className="fixed inset-0 pointer-events-none z-[-1] overflow-hidden opacity-10">
+      {[...Array(12)].map((_, i) => (
+        <motion.div
+           key={i}
+           initial={{ 
+             x: Math.random() * 100 + "%", 
+             y: Math.random() * 100 + "%",
+             rotate: Math.random() * 360,
+             scale: Math.random() * 0.5 + 0.5
+           }}
+           animate={{ 
+             y: ["-10%", "110%"],
+             rotate: 360,
+             x: [Math.random() * 100 + "%", Math.random() * 100 + "%"]
+           }}
+           transition={{ 
+             duration: 30 + Math.random() * 40, 
+             repeat: Infinity, 
+             ease: "linear" 
+           }}
+           className="absolute text-slate-300 transform"
+        >
+           {i % 3 === 0 ? <Trophy size={100} /> : i % 3 === 1 ? <Target size={120} /> : <Globe size={80} />}
+        </motion.div>
+      ))}
+      <div className="absolute inset-0 bg-white/20 backdrop-blur-[100px]" />
+    </div>
+  );
+};
+
 function PageWrapper({ children }: { children: React.ReactNode }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      transition={{ duration: 0.5 }}
+      initial={{ opacity: 0, y: 10, filter: "blur(4px)" }}
+      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      exit={{ opacity: 0, scale: 0.98, filter: "blur(4px)" }}
+      transition={{ 
+        duration: 0.4, 
+        ease: [0.22, 1, 0.36, 1] 
+      }}
       className="w-full"
     >
       {children}
@@ -364,6 +399,7 @@ function App() {
     <div className="min-h-screen bg-white text-foreground flex flex-col items-center overflow-x-hidden selection:bg-primary/20 selection:text-primary relative">
       <ScrollToTop />
       <Navbar />
+      <BackgroundEffect />
       
       <main className="flex-grow w-full pt-16 md:pt-20">
         <AnimatePresence mode='wait'>
