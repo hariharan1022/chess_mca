@@ -34,7 +34,7 @@ const coursesData = [
     ],
     whyChooseUs: 'Our beginner program uses interactive visualized tools that make the complex rules of chess intuitive and fun for kids and adults alike.',
     image: bgBanner1,
-    stats: { puzzles: '500+', duration: '3 Months', students: '100+' }
+    stats: { puzzles: '', duration: '', students: '100+' }
   },
   {
     id: 'intermediate',
@@ -64,7 +64,7 @@ const coursesData = [
     ],
     whyChooseUs: 'We use Grandmaster-level analysis software and personalized feedback to identify and fix your persistent tactical blindspots.',
     image: bgBanner2,
-    stats: { puzzles: '2000+', duration: '6 Months', students: '100+' }
+    stats: { puzzles: '2000+', duration: '', students: '100+' }
   },
   {
     id: 'advanced',
@@ -94,7 +94,7 @@ const coursesData = [
     ],
     whyChooseUs: 'Direct access to expert District and State level trainers. You aren\'t just a student; you are an apprentice to true experts.',
     image: bgBanner3,
-    stats: { puzzles: '4000+', duration: '1 Year', students: '100+' }
+    stats: { puzzles: '4000+', duration: '', students: '100+' }
   }
 ];
 
@@ -183,15 +183,19 @@ export function Courses() {
                       <Zap className="w-4 h-4 text-primary" /> ABOUT THIS COURSE
                    </h4>
                    <p className="text-slate-600 text-base md:text-lg font-light leading-relaxed italic mb-6 md:mb-8">"{course.about}"</p>
-                   <div className="grid grid-cols-2 gap-2 md:gap-4 border-t border-slate-100 pt-6 md:pt-8 text-center sm:text-left">
-                      <div>
-                         <div className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">PUZZLES</div>
-                         <div className="text-base md:text-xl font-black text-slate-900 uppercase italic">{course.stats.puzzles}</div>
-                      </div>
-                      <div>
-                         <div className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">DURATION</div>
-                         <div className="text-base md:text-xl font-black text-slate-900 uppercase italic">{course.stats.duration}</div>
-                      </div>
+                   <div className="grid grid-cols-1 gap-2 md:gap-4 border-t border-slate-100 pt-6 md:pt-8 text-center sm:text-left">
+                      {course.stats.puzzles && (
+                        <div>
+                           <div className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">PUZZLES</div>
+                           <div className="text-base md:text-xl font-black text-slate-900 uppercase italic">{course.stats.puzzles}</div>
+                        </div>
+                      )}
+                      {course.stats.duration && (
+                        <div>
+                           <div className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">DURATION</div>
+                           <div className="text-base md:text-xl font-black text-slate-900 uppercase italic">{course.stats.duration}</div>
+                        </div>
+                      )}
                    </div>
                 </div>
 
