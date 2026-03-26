@@ -162,60 +162,64 @@ function StateCommunity() {
 function ParentReviews() {
   const reviews = [
     {
-      name: "Senthil Kumar",
-      role: "Parent",
-      text: "One of the best chess academies in Pudukkottai. My son drastically improved his concentration and logical thinking. The trainers are professional.",
+      name: "Vignesh Narayanan",
+      text: "Pudukkotai best chess academy ..low fees and best personal carrying for per children....",
       rating: 5,
-      date: "2 months ago"
+      date: "2 years ago"
     },
     {
-      name: "Priya Rajesh",
-      role: "Parent",
-      text: "Master Chess Academy is excellent for beginners. The curriculum is well-structured and the regular testing keeps students motivated. Highly recommended!",
+      name: "Mathan Inthama",
+      text: "One of the best coaching centre in Pudukkottai.",
       rating: 5,
-      date: "1 month ago"
+      date: "2 years ago"
     },
     {
-      name: "Anand V",
-      role: "Parent",
-      text: "Friendly coaches and competitive environment. Both Kamarajapuram and Periyar Nagar branches are well-maintained. Best academy for District level players.",
+      name: "Harish B",
+      text: "Good place to learn for beginners 👍♟️♟️👍",
       rating: 5,
-      date: "3 months ago"
+      date: "2 years ago"
     },
     {
-      name: "Dinesh K",
-      role: "Parent",
-      text: "The personalized attention each student gets is remarkable. My daughter loves the puzzle sessions. Great atmosphere for learning strategy.",
+      name: "SJR Ahilan",
+      text: "Very good teaching 🙏",
       rating: 5,
-      date: "4 months ago"
+      date: "2 years ago"
     },
     {
-      name: "Meera R",
-      role: "Parent",
-      text: "Highly disciplined and well-organized. The monthly test reports help us track progress. Best decision for my son's creative growth.",
+      name: "Vetri Printers",
+      text: "Amazing coaching at Master Chess Academy.",
+      rating: 5,
+      date: "2 years ago"
+    },
+    {
+      name: "Palani R",
+      text: "Nice coaching and excellent environment.",
+      rating: 5,
+      date: "1 year ago"
+    },
+    {
+      name: "Sethuraman Balasubramaniyan",
+      text: "Nice place to learn chess. Highly recommended.",
+      rating: 5,
+      date: "2 years ago"
+    },
+    {
+      name: "Ranjith Rosan",
+      text: "Best academy in Pudukkottai for aspiring champions.",
+      rating: 5,
+      date: "7 months ago"
+    },
+    {
+      name: "Ashwin",
+      text: "Professional trainers and friendly atmosphere.",
       rating: 4,
-      date: "5 months ago"
+      date: "10 months ago"
     },
     {
-      name: "Rajesh MK",
-      role: "Parent",
-      text: "Excellent training for state level competitions. Coaches are very patient with kids.",
+      name: "Bharathi N",
+      text: "Great experience for my children. Best in class.",
       rating: 5,
-      date: "6 months ago"
-    },
-    {
-      name: "Sowmya T",
-      role: "Parent",
-      text: "The best chess coaching in Pudukkottai. Values and focus are taught alongside the game.",
-      rating: 5,
-      date: "1 week ago"
-    },
-    {
-      name: "Vijay Ram",
-      role: "Parent",
-      text: "Very professional and systematic approach. My kid has improved a lot in just 3 months.",
-      rating: 5,
-      date: "3 weeks ago"
+      date: "1 year ago"
     }
   ];
 
