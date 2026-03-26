@@ -14,7 +14,7 @@ export function Contact() {
     // Prepare WhatsApp message
     const message = `Hello Master Chess Academy,\n\nName: ${formState.name}\nEmail: ${formState.email}\nMessage: ${formState.message}`;
     const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/9629399085?text=${encodedMessage}`;
+    const whatsappUrl = `https://wa.me/9940773204?text=${encodedMessage}`;
     
     // Redirect after a small delay
     setTimeout(() => {
@@ -93,7 +93,8 @@ export function Contact() {
               {[
                 { icon: <Mail className="text-primary w-6 h-6" />, label: "Email Us", value: "hariharnmahesh34@gmail.com" },
                 { icon: <PhoneCall className="text-primary w-6 h-6" />, label: "Call Us", value: "+91 96293 99085" },
-                { icon: <MapPin className="text-primary w-6 h-6" />, label: "Main Office", value: "Chennai, India" }
+                { icon: <MapPin className="text-primary w-6 h-6" />, label: "Main Branch", value: "Kamarajapuram, Pudukkottai" },
+                { icon: <MapPin className="text-primary w-6 h-6" />, label: "Second Branch", value: "Periyar Nagar, Pudukkottai" }
               ].map((item, i) => (
                 <motion.div
                   key={item.label}
