@@ -120,7 +120,7 @@ export function Footer() {
         <div className="pt-8 pb-4 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 text-slate-500 text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.2em] relative z-20">
           <p className="text-center md:text-left leading-relaxed">
              © 2026 MASTER CHESS ACADEMY. ALL RIGHTS RESERVED. <br className="md:hidden" />
-             <span className="text-primary md:ml-2">DESIGNED FOR EXCELLENCE.</span>
+             <span className="text-primary md:ml-2">DESIGNED BY SK BROTHES CODE TECHNOLOGYS.</span>
           </p>
           <div className="flex flex-wrap justify-center gap-6 md:gap-10">
             <a href="#" className="hover:text-primary transition-colors">PRIVACY TERMS</a>

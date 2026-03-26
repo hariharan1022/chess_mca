@@ -10,12 +10,12 @@ const championshipImageModules = (import.meta as any).glob('@/assets/gallery/cha
 
 const academyImages = Object.entries(academyImageModules).map(([path, url]) => ({
   url: url as string,
-  title: path.split('/').pop()?.replace(/WhatsApp Image.*?at\s+/i, '').split('.')[0] || "Academy Moment"
+  title: path.split('/').pop()?.replace(/WhatsApp_Image.*?at_/i, '').split('.')[0]?.replace(/_/g, ' ') || "Academy Moment"
 }));
 
 const championshipImages = Object.entries(championshipImageModules).map(([path, url]) => ({
   url: url as string,
-  title: path.split('/').pop()?.replace(/WhatsApp Image.*?at\s+/i, '').split('.')[0] || "Championship Glory"
+  title: path.split('/').pop()?.replace(/WhatsApp_Image.*?at_/i, '').split('.')[0]?.replace(/_/g, ' ') || "Championship Glory"
 }));
 
 export function Gallery() {
