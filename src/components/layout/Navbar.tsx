@@ -41,11 +41,17 @@ export function Navbar() {
           animate={{ opacity: 1, x: 0 }}
           className="flex items-center gap-2"
         >
-          <div className="w-10 h-10 rounded-lg overflow-hidden flex items-center justify-center bg-white border border-slate-200 shadow-sm shrink-0" onClick={() => window.location.href='/'} style={{cursor: 'pointer'}}>
-            <img src={mcaLogo} alt="MCA Logo" className="w-full h-full object-contain p-1" />
+          <div className={cn(
+            "w-10 h-10 rounded-lg overflow-hidden flex items-center justify-center border shadow-sm shrink-0 transition-colors duration-300",
+            scrolled ? "bg-white border-slate-200" : "bg-white/10 border-white/20 backdrop-blur-md"
+          )} onClick={() => window.location.href='/'} style={{cursor: 'pointer'}}>
+            <img src={mcaLogo} alt="MCA Logo" className="w-full h-full object-contain p-1 invert-0" />
           </div>
-          <span className="text-xl font-bold tracking-tight text-slate-900 hidden sm:block uppercase">
-            MASTERS CHESS <span className="text-primary italic font-black">ACADEMY</span>
+          <span className={cn(
+            "text-[10px] sm:text-xl font-black tracking-tighter uppercase transition-colors duration-300",
+            scrolled ? "text-slate-900" : "text-white shadow-sm"
+          )}>
+            MASTERS CHESS <span className="text-primary italic">ACADEMY</span>
           </span>
         </motion.div>
 
@@ -60,25 +66,31 @@ export function Navbar() {
             >
               <Link
                 to={item.href}
-                className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 hover:text-primary transition-all relative group"
+                className={cn(
+                  "text-[10px] font-black uppercase tracking-[0.2em] transition-all relative group",
+                  scrolled ? "text-slate-400 hover:text-primary" : "text-white/70 hover:text-white"
+                )}
               >
                 {item.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
               </Link>
             </motion.div>
           ))}
-          <div className="h-6 w-px bg-slate-200/50 mx-2" />
-          <Button variant="gold" size="sm" className="font-bold tracking-widest uppercase text-xs" onClick={handleEnroll}>
+          <div className={cn("h-6 w-px mx-2 transition-colors", scrolled ? "bg-slate-200/50" : "bg-white/20")} />
+          <Button variant="gold" size="sm" className="font-bold tracking-widest uppercase text-xs shadow-xl shadow-primary/20" onClick={handleEnroll}>
             Enroll Now
           </Button>
         </div>
 
         {/* Mobile Toggle */}
         <button 
-          className="md:hidden text-slate-900 p-2"
+          className={cn(
+            "md:hidden p-2 transition-colors",
+            scrolled ? "text-slate-900" : "text-white"
+          )}
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? <X /> : <Menu />}
+          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
