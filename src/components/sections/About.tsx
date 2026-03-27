@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import { Shield, Globe, Target, TrendingUp, Award, Users, CheckCircle2 } from 'lucide-react';
 import parthibanImg from '@/assets/masters/parthiban.jpeg';
-import bgBanner1 from '@/assets/background_banner/abstract-chess-pieces-digital-art-style.jpg';
-import bgBanner2 from '@/assets/background_banner/digital-art-style-abstract-chess-pieces_1.jpg';
-import bgBanner3 from '@/assets/background_banner/digital-art-style-abstract-chess-pieces.jpg';
+import bgBanner1 from '@/assets/background_banner/banner5.jpg';
+import bgBanner2 from '@/assets/background_banner/banner1.jpeg';
+import bgBanner3 from '@/assets/background_banner/banner2.jpeg';
 
 const milestones = [
   { year: "2018", event: "Academy Founded", icon: <Shield className="w-6 h-6" /> },
@@ -34,45 +34,73 @@ export function About() {
   return (
     <div className="flex flex-col">
       {/* Our Mission Section - Simplified Cinematic Style */}
-      <section className="min-h-[10vh] md:min-h-screen flex flex-col items-center justify-center pt-24 md:pt-40 text-center relative overflow-hidden bg-white">
-        {/* Cinematic Backdrop Banner with Full Color */}
+      <section className="relative h-[45vh] sm:h-[60vh] md:h-screen min-h-[320px] md:min-h-[600px] w-full overflow-hidden bg-slate-900">
+        {/* Cinematic Backdrop Banner - Single Image (Banner 5) */}
         <div className="absolute inset-0 z-0">
           <img
             src={bgBanner1}
             alt="Chess Academy Mission"
-            className="w-full h-full object-cover opacity-100"
+            className="w-full h-full object-cover scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-white via-white/5 to-transparent" />
+          <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-[1px]" />
         </div>
 
-        <div className="container px-6 mx-auto relative z-10">
-          <div className="max-w-6xl mx-auto flex flex-col items-center md:items-start text-center md:text-left">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              className="inline-block p-4 bg-primary/20 rounded-2xl mb-8 border border-primary/20 shadow-xl shadow-primary/10 bg-white/20 backdrop-blur-md"
-            >
-              <Target className="w-10 h-10 md:w-14 md:h-14 text-primary" />
-            </motion.div>
-            <h2 className="text-3xl md:text-9xl font-black text-slate-900 uppercase tracking-tighter italic mb-4 md:mb-12 leading-none">
-              OUR <span className="text-primary italic font-black">MISSION</span>
-            </h2>
-            <p className="text-slate-700 max-w-4xl font-medium text-lg sm:text-2xl md:text-4xl leading-tight italic px-2 md:px-0 mb-8 md:mb-20">
-              "To democratize elite chess education by blending <span className="text-slate-900 font-bold">ancient wisdom</span> with <span className="text-primary font-bold italic">modern technology</span>, creating a community arena where every child can master the art of strategy."
-            </p>
+        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 md:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="inline-flex items-center gap-1 md:gap-2 px-3 md:px-6 py-1.5 md:py-3 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full text-white text-[10px] md:text-sm font-black tracking-[0.2em] md:tracking-[0.4em] mb-3 md:mb-8 uppercase"
+          >
+            <Target size={12} className="text-primary md:w-4 md:h-4" />
+            OUR ACADEMY MISSION
+          </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 w-full">
-              {[
-                { label: "EMPOWER", desc: "Building confidence through mastery." },
-                { label: "EXCEL", desc: "Pushing limits in every move." },
-                { label: "EVOLVE", desc: "Growing as players and thinkers." }
-              ].map(point => (
-                <div key={point.label} className="p-8 md:p-10 border border-slate-100 bg-white/50 backdrop-blur-md rounded-3xl shadow-xl hover:border-primary/50 transition-all hover:scale-105 text-left">
-                  <div className="text-primary font-black tracking-widest mb-3 text-xl md:text-2xl italic tracking-tighter uppercase">{point.label}</div>
-                  <div className="text-sm md:text-base text-slate-500 font-medium leading-relaxed uppercase tracking-widest">{point.desc}</div>
-                </div>
-              ))}
-            </div>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black text-white leading-[1] md:leading-[0.9] uppercase italic tracking-tighter mb-4 md:mb-10 max-w-[95%] md:max-w-6xl"
+          >
+            OUR <span className="text-primary italic font-black">MISSION</span> & <br className="hidden md:block" /> VISION
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-xs sm:text-lg md:text-2xl text-white/80 font-medium italic mb-5 md:mb-12 max-w-[90%] md:max-w-4xl leading-snug md:leading-relaxed"
+          >
+            "To democratize elite chess education by blending <span className="text-white font-bold">ancient wisdom</span> with <span className="text-primary font-bold italic">modern technology</span>, creating a community where every child masters strategy."
+          </motion.p>
+        </div>
+      </section>
+
+      {/* Academy Values Section - Same as Home Stats style */}
+      <section className="py-12 md:py-24 bg-white relative z-20 -mt-10 md:-mt-20">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-10">
+            {[
+              { label: "EMPOWER", val: "EMPOWER", sub: "Confidence through mastery" },
+              { label: "EXCEL", val: "EXCEL", sub: "Pushing every tactical limit" },
+              { label: "EVOLVE", val: "EVOLVE", sub: "Growing as thinkers daily" }
+            ].map((s, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="p-8 md:p-14 bg-slate-50 border border-slate-100 rounded-[2.5rem] md:rounded-[3.5rem] text-center group hover:bg-white hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500"
+              >
+                <motion.div 
+                  whileInView={{ scale: [1, 1.05, 1] }}
+                  transition={{ duration: 1, delay: 0.5 + (i * 0.1) }}
+                  className="text-3xl md:text-6xl font-black text-primary mb-3 italic tracking-tighter uppercase"
+                >
+                  {s.val}
+                </motion.div>
+                <div className="text-[10px] md:text-xs font-black text-slate-900 uppercase tracking-widest mb-1">{s.label}</div>
+                <div className="text-[8px] md:text-[10px] text-slate-400 font-bold uppercase tracking-tight">{s.sub}</div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

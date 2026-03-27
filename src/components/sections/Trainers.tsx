@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Twitter, Linkedin, Users, Trophy, Award, Target, Star, Shield } from 'lucide-react';
 import parthibanImg from '@/assets/masters/parthiban.jpeg';
 
-import bgBanner2 from '@/assets/background_banner/digital-art-style-abstract-chess-pieces_1.jpg';
+import bgBanner2 from '@/assets/background_banner/banner2.jpeg';
 
 const trainers = [
   {

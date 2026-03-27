@@ -1,7 +1,6 @@
-import React from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import React, { useState, useEffect, useRef } from 'react'
+import { motion, AnimatePresence, useInView, animate } from 'framer-motion'
 import { Routes, Route, useLocation, Link } from 'react-router-dom'
-import { useEffect } from 'react'
 import { Navbar } from './components/layout/Navbar'
 import { Hero } from './components/sections/Hero'
 import { About } from './components/sections/About'
@@ -385,12 +384,35 @@ function ParentReviews() {
   );
 }
 
+function Counter({ value, suffix = "", duration = 2, decimals = 0 }: { value: number, suffix?: string, duration?: number, decimals?: number }) {
+  const [count, setCount] = useState(0);
+  const nodeRef = useRef(null);
+  const isInView = useInView(nodeRef, { once: true, amount: 0.5 });
+
+  useEffect(() => {
+    if (isInView) {
+      const controls = animate(0, value, {
+        duration: duration,
+        onUpdate: (latest) => setCount(latest),
+      });
+      return () => controls.stop();
+    }
+  }, [isInView, value, duration]);
+
+  return (
+    <span ref={nodeRef}>
+      {count.toFixed(decimals)}
+      {suffix}
+    </span>
+  );
+}
+
 function HeroStats() {
   const stats = [
-    { label: "Elite Students", val: "100+", sub: "Certified by District" },
-    { label: "Expert Coaches", val: "10+", sub: "FIDE Rated Trainers" },
-    { label: "Pudukkottai", val: "2 Branches", sub: "Town & Campus" },
-    { label: "Trust Rating", val: "4.7/5", sub: "Based on Google Reviews" }
+    { label: "Elite Students", val: 100, suffix: "+", sub: "Certified by District" },
+    { label: "Expert Coaches", val: 10, suffix: "+", sub: "FIDE Rated Trainers" },
+    { label: "Pudukkottai", val: 2, suffix: " Branches", sub: "Town & Campus" },
+    { label: "Trust Rating", val: 4.7, suffix: "/5", sub: "Based on Google Reviews", decimals: 1 }
   ];
 
   return (
@@ -406,13 +428,11 @@ function HeroStats() {
               transition={{ delay: i * 0.1 }}
               className="p-6 md:p-10 bg-slate-50 border border-slate-100 rounded-[2rem] text-center group hover:bg-white hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500"
             >
-              <motion.div 
-                whileInView={{ scale: [1, 1.1, 1] }}
-                transition={{ duration: 1, delay: 0.5 + (i * 0.1) }}
+              <div 
                 className="text-3xl md:text-5xl font-black text-slate-900 mb-2 italic tracking-tighter"
               >
-                {s.val}
-              </motion.div>
+                <Counter value={s.val} suffix={s.suffix} decimals={s.decimals} />
+              </div>
               <div className="text-[10px] md:text-xs font-black text-primary uppercase tracking-widest mb-1">{s.label}</div>
               <div className="text-[8px] md:text-[10px] text-slate-400 font-bold uppercase tracking-tight">{s.sub}</div>
             </motion.div>

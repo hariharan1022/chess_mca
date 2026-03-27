@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import { BookOpen, Target, CheckCircle2, Shield, Star, Award, Zap, Brain, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
-import bgBanner1 from '@/assets/background_banner/abstract-chess-pieces-digital-art-style.jpg';
-import bgBanner2 from '@/assets/background_banner/digital-art-style-abstract-chess-pieces_1.jpg';
-import bgBanner3 from '@/assets/background_banner/digital-art-style-abstract-chess-pieces.jpg';
+import bgBanner1 from '@/assets/background_banner/banner1.jpeg';
+import bgBanner2 from '@/assets/background_banner/banner2.jpeg';
+import bgBanner3 from '@/assets/background_banner/banner3.jpeg';
 
 const coursesData = [
   {

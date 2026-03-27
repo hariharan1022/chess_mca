@@ -3,11 +3,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { ArrowRight, Trophy, ChevronLeft, ChevronRight } from 'lucide-react';
 
-import banner1 from '@/assets/background_banner/abstract-chess-pieces-digital-art-style.jpg';
-import banner2 from '@/assets/background_banner/digital-art-style-abstract-chess-pieces.jpg';
-import banner3 from '@/assets/background_banner/WhatsApp_Image_2026-03-24_at_4.56.14_AM_2.jpeg';
-import banner4 from '@/assets/background_banner/WhatsApp_Image_2026-03-24_at_4.56.18_AM.jpeg';
-import banner5 from '@/assets/background_banner/digital-art-style-abstract-chess-pieces_1.jpg';
+import banner1 from '@/assets/background_banner/banner1.jpeg';
+import banner2 from '@/assets/background_banner/banner2.jpeg';
+import banner3 from '@/assets/background_banner/banner3.jpeg';
+import banner4 from '@/assets/background_banner/banner4.jpeg';
+import banner5 from '@/assets/background_banner/banner5.jpg';
 
 const slides = [
   {
