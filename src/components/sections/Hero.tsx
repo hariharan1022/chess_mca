@@ -1,104 +1,153 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
-import { ArrowRight, Trophy } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { ArrowRight, Trophy, ChevronLeft, ChevronRight } from 'lucide-react';
+
+import banner1 from '@/assets/background_banner/abstract-chess-pieces-digital-art-style.jpg';
+import banner2 from '@/assets/background_banner/digital-art-style-abstract-chess-pieces.jpg';
+import banner3 from '@/assets/background_banner/WhatsApp_Image_2026-03-24_at_4.56.14_AM_2.jpeg';
+import banner4 from '@/assets/background_banner/WhatsApp_Image_2026-03-24_at_4.56.18_AM.jpeg';
+import banner5 from '@/assets/background_banner/digital-art-style-abstract-chess-pieces_1.jpg';
+
+const slides = [
+  {
+    image: banner1,
+    title: "MASTER THE ART OF MOVE",
+    desc: "Unlock the genius within. Professional chess training from expert trainers for every aspiring District and State champion."
+  },
+  {
+    image: banner2,
+    title: "ELITE MENTORSHIP",
+    desc: "Learn from FIDE rated trainers and local masters who have shaped over 500+ successful players."
+  },
+  {
+    image: banner3,
+    title: "STATE COMMUNITY",
+    desc: "Join a vibrant network of chess-playing kids across Tamil Nadu and participate in weekly elite tournaments."
+  },
+  {
+    image: banner4,
+    title: "DISTRICT CHAMPIONS",
+    desc: "Our roadmap is specifically designed to take you from a curious beginner to a decorated district champion."
+  },
+  {
+    image: banner5,
+    title: "MODERN ARENA",
+    desc: "Experience world-class facilities at our dual branches in Pudukkottai, designed for the ultimate focus."
+  }
+];
 
 export function Hero() {
-  const { scrollY } = useScroll();
-  const y1 = useTransform(scrollY, [0, 500], [0, 100]);
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const nextSlide = () => setCurrent((prev) => (prev + 1) % slides.length);
+  const prevSlide = () => setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
 
   return (
-    <section className="relative min-h-[30vh] md:min-h-screen flex flex-col items-center justify-center pt-8 md:pt-20 overflow-hidden bg-white">
-      
-      {/* Cinematic Full Color Background Banner */}
-      <div className="absolute inset-0 z-0">
-        <motion.div 
-          style={{ y: y1 }} 
-          initial={{ scale: 1.1, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
+    <section className="relative h-[45vh] sm:h-[60vh] md:h-screen min-h-[320px] md:min-h-[600px] w-full overflow-hidden bg-slate-900">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={current}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1 }}
           className="absolute inset-0"
         >
-          <img 
-            src="https://images.unsplash.com/photo-1529699211952-734e80c4d42b?auto=format&fit=crop&q=80&w=2500" 
-            alt="Chess Arena Hero" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-white via-white/5 to-transparent" />
-        </motion.div>
-      </div>
-
-      <div className="container relative z-10 mx-auto px-6">
-        <div className="max-w-6xl mx-auto flex flex-col items-center md:items-start text-center md:text-left">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="mb-6 md:mb-8 p-1.5 px-4 md:px-6 bg-primary rounded-full text-white text-[10px] sm:text-xs md:text-sm font-black tracking-[0.2em] md:tracking-[0.4em] inline-flex items-center gap-2 md:gap-3 uppercase shadow-lg shadow-primary/20"
-          >
-            <Trophy className="w-3 h-3 md:w-4 md:h-4" />
-            MASTERS CHESS ACADEMY
-          </motion.div>
-
-          <motion.h1 
-            className="text-3xl sm:text-5xl md:text-9xl font-black text-slate-900 leading-[0.95] md:leading-[0.85] mb-4 md:mb-10 uppercase italic tracking-tighter"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          >
-            MASTER THE <br />
-            <span className="text-primary italic font-black">ART OF</span> MOVE
-          </motion.h1>
-
-          <motion.p
-            className="text-base sm:text-lg md:text-xl text-slate-700 max-w-2xl font-medium mb-10 md:mb-16 leading-relaxed italic"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          >
-            Unlock the genius within. Professional chess training from expert trainers for every aspiring District and State champion.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-6 items-center w-full sm:w-auto"
-          >
-            <Button 
-              size="lg" 
-              className="w-full sm:w-auto px-12 md:px-16 group bg-primary text-white hover:bg-slate-900 transition-all font-black uppercase tracking-widest py-7 md:py-8 shadow-2xl shadow-primary/30 border-none rounded-2xl"
-              onClick={() => window.open('https://wa.me/9629399085?text=Hello! I would like to start my chess journey with Master Chess Academy.', '_blank')}
-            >
-              START JOURNEY <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Link to="/courses" className="w-full sm:w-auto">
-              <Button size="lg" variant="outline" className="w-full bg-white/40 backdrop-blur-md border border-slate-200 text-slate-900 hover:bg-slate-900 hover:text-white font-black tracking-widest uppercase py-7 md:py-8 px-12 md:px-16 transition-all rounded-2xl shadow-xl">
-                VIEW COURSES
-              </Button>
-            </Link>
-          </motion.div>
-
-          {/* Clean Stats Row */}
-          <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 sm:gap-8 md:gap-16 pt-8 md:pt-12 border-t border-slate-100 w-full">
-            {[
-              { label: "Students", val: "100+" },
-              { label: "Coaches", val: "10+" },
-              { label: "Pudukkottai", val: "2 Branches" },
-              { label: "Rating", val: "4.9/5" }
-            ].map((s, i) => (
-              <div key={i} className="flex flex-col items-center md:items-start">
-                <div className="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 italic tracking-tighter leading-none mb-1 md:mb-2">
-                  <span className="text-primary">{s.val}</span>
-                </div>
-                <div className="text-[10px] sm:text-xs md:text-sm text-slate-400 font-bold uppercase tracking-widest">{s.label}</div>
-              </div>
-            ))}
+          {/* Background Image with Overlay */}
+          <div className="absolute inset-0 z-0">
+            <img 
+              src={slides[current].image} 
+              alt="Hero Slide" 
+              className="w-full h-full object-cover scale-105"
+            />
+            <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-[1px]" />
           </div>
 
-        </div>
+          {/* Centered Content */}
+          <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 md:px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="inline-flex items-center gap-1 md:gap-2 px-3 md:px-6 py-1.5 md:py-3 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full text-white text-[8px] md:text-sm font-black tracking-[0.2em] md:tracking-[0.4em] mb-3 md:mb-8 uppercase"
+            >
+              <Trophy size={12} className="text-primary md:w-4 md:h-4" />
+              MASTERS CHESS ACADEMY
+            </motion.div>
+
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              className="text-xl sm:text-4xl md:text-8xl lg:text-9xl font-black text-white leading-[1] md:leading-[0.9] uppercase italic tracking-tighter mb-4 md:mb-10 max-w-[90%] md:max-w-5xl"
+            >
+              {slides[current].title.split(' ').map((word, i) => (
+                <span key={i} className={i % 2 !== 0 ? "text-primary italic" : ""}>{word} </span>
+              ))}
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.7 }}
+              className="text-[10px] sm:text-lg md:text-2xl text-white/80 font-medium italic mb-5 md:mb-12 max-w-[85%] md:max-w-3xl leading-snug md:leading-relaxed"
+            >
+              {slides[current].desc}
+            </motion.p>
+
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.9 }}
+            >
+              <Button 
+                onClick={() => window.open('https://wa.me/9629399085?text=Hello! I would like to join the elite at Master Chess Academy.', '_blank')}
+                className="bg-primary text-white hover:bg-white hover:text-slate-900 px-6 md:px-20 py-4 md:py-10 rounded-full font-black uppercase tracking-[0.1em] md:tracking-[0.3em] shadow-[0_15px_30px_rgba(180,138,13,0.3)] text-[10px] md:text-xl group"
+              >
+                Enroll Now
+                <ArrowRight className="ml-2 md:ml-4 w-3 h-3 md:w-6 md:h-6 group-hover:translate-x-3 transition-transform" />
+              </Button>
+            </motion.div>
+          </div>
+        </motion.div>
+      </AnimatePresence>
+
+      {/* Navigation Arrows - Scaled for Mobile */}
+      <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 z-20 pointer-events-none flex items-center justify-between px-2 md:px-12">
+        <button 
+          onClick={prevSlide}
+          className="pointer-events-auto w-8 h-8 md:w-20 md:h-20 flex items-center justify-center rounded-full bg-white/5 hover:bg-primary border border-white/10 text-white transition-all backdrop-blur-md group"
+        >
+          <ChevronLeft className="w-4 h-4 md:w-10 md:h-10 group-active:scale-95" />
+        </button>
+        <button 
+          onClick={nextSlide}
+          className="pointer-events-auto w-8 h-8 md:w-20 md:h-20 flex items-center justify-center rounded-full bg-white/5 hover:bg-primary border border-white/10 text-white transition-all backdrop-blur-md group"
+        >
+          <ChevronRight className="w-4 h-4 md:w-10 md:h-10 group-active:scale-95" />
+        </button>
       </div>
 
+      {/* Pagination Indicators - Positioned Closer */}
+      <div className="absolute bottom-4 md:bottom-12 left-1/2 -translate-x-1/2 z-20 flex gap-2 md:gap-4">
+        {slides.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={`transition-all duration-500 rounded-full ${
+              current === i ? "w-6 md:w-20 bg-primary h-1 md:h-3" : "w-1.5 md:w-3 bg-white/30 h-1 md:h-3 hover:bg-white/50"
+            }`}
+          />
+        ))}
+      </div>
     </section>
   );
 }
