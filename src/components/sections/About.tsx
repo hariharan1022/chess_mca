@@ -2,9 +2,6 @@ import { motion } from 'framer-motion';
 import { Shield, Globe, Target, TrendingUp, Award, Users, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import parthibanImg from '@/assets/masters/parthiban.jpeg';
-import bgBanner1 from '@/assets/background_banner/banner5.jpg';
-import bgBanner2 from '@/assets/background_banner/banner1.jpeg';
-import bgBanner3 from '@/assets/background_banner/banner2.jpeg';
 
 const milestones = [
   { year: "2018", event: "Academy Founded", icon: <Shield className="w-6 h-6" /> },

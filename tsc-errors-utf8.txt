@@ -1,0 +1,4 @@
+﻿src/components/sections/About.tsx(5,1): error TS6133: 'bgBanner1' is declared but its value is never read.
+src/components/sections/About.tsx(6,1): error TS6133: 'bgBanner2' is declared but its value is never read.
+src/components/sections/About.tsx(7,1): error TS6133: 'bgBanner3' is declared but its value is never read.
+src/components/sections/PrivacyTerms.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
