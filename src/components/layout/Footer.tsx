@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Heart, ChevronUp, Github, Twitter, Linkedin, Instagram, ArrowRight, MapPin, Phone, Mail } from 'lucide-react';
 import mcaLogo from '@/assets/mca logo.jpeg';
 
@@ -120,10 +121,12 @@ export function Footer() {
         <div className="pt-8 pb-4 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 text-slate-500 text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.2em] relative z-20">
           <p className="text-center md:text-left leading-relaxed">
              © 2026 MASTERS CHESS ACADEMY. ALL RIGHTS RESERVED. <br className="md:hidden" />
-             <span className="text-primary md:ml-2">DESIGNED BY SK BROTHES CODE TECHNOLOGYS.</span>
+             <a href="https://hariharan1022.github.io/sk_web_tech/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-slate-900 md:ml-2 transition-colors hover:underline">
+               DESIGNED BY SK WEB TECHNOLOGIES.
+             </a>
           </p>
           <div className="flex flex-wrap justify-center gap-6 md:gap-10">
-            <a href="#" className="hover:text-primary transition-colors">PRIVACY TERMS</a>
+            <Link to="/privacy-terms" className="hover:text-primary transition-colors">PRIVACY TERMS</Link>
             <a href="#" className="hover:text-primary transition-colors">STRATEGY BLOG</a>
             <button onClick={scrollToTop} className="flex items-center gap-2 text-primary hover:text-slate-900 transition-colors group font-black ml-auto md:ml-0">
               TOP <ChevronUp className="w-4 h-4 group-hover:-translate-y-1 transition-transform" />

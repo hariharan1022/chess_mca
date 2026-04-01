@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+
 import { BookOpen, Target, CheckCircle2, Shield, Star, Award, Zap, Brain, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import bgBanner1 from '@/assets/background_banner/banner1.jpeg';
@@ -129,38 +129,6 @@ const StateBenefits = () => (
 export function Courses() {
   return (
     <div className="flex flex-col bg-white overflow-hidden">
-      {/* Header */}
-      <section className="min-h-[30vh] md:min-h-screen flex flex-col items-center justify-center pt-24 md:pt-40 text-center relative overflow-hidden bg-white">
-        {/* Full-Color Backdrop Banner - Unique Image */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src={bgBanner3} 
-            alt="Chess Academy Roadmap" 
-            className="w-full h-full object-cover opacity-100"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-white via-white/5 to-transparent" />
-        </div>
-
-        <div className="container px-6 mx-auto relative z-10">
-          <div className="max-w-6xl mx-auto flex flex-col items-center md:items-start text-center md:text-left">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-6 py-2 bg-primary/10 rounded-full text-primary font-black uppercase tracking-[0.3em] text-[10px] md:text-sm mb-8 md:mb-12 border border-primary/20 shadow-sm shadow-primary/10 bg-white/20 backdrop-blur-md"
-            >
-              <Shield className="w-4 h-4" /> ACADEMIC ROADMAP
-            </motion.div>
-            <h1 className="text-3xl md:text-9xl font-black text-slate-900 uppercase tracking-tighter italic mb-4 md:mb-12 leading-none">
-              THE <span className="text-primary italic font-black">ACADEMY</span> <br /> ROADMAP
-            </h1>
-            <p className="text-slate-600 max-w-2xl font-medium text-lg md:text-2xl italic leading-relaxed tracking-wide px-2 md:px-0">
-              Our data-driven curriculum, refined over 6 years and trusted by <span className="text-primary font-bold italic">100+ students</span>, is presented below in three comprehensive phases.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Course Sections - Scroll One by One */}
       {coursesData.map((course, index) => (
         <section key={course.id} className={`py-12 md:py-32 relative overflow-hidden ${index % 2 === 0 ? 'bg-white' : 'bg-slate-50'}`}>

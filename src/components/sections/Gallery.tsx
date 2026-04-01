@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ZoomIn } from 'lucide-react';
-import bgBanner3 from '@/assets/background_banner/banner3.jpeg';
+
 
 // Vite glob imports for dynamic image discovery
 const academyImageModules = (import.meta as any).glob('@/assets/gallery/academy/*.{jpeg,jpg,png,JPG}', { eager: true, query: '?url', import: 'default' });
@@ -23,42 +23,6 @@ export function Gallery() {
 
   return (
     <section id="gallery" className="flex flex-col bg-white overflow-hidden">
-      {/* Cinematic Header for Gallery */}
-      <section className="min-h-[30vh] md:min-h-screen flex flex-col items-center justify-center pt-24 md:pt-40 text-center relative overflow-hidden bg-white">
-        {/* Full-Color Backdrop Banner - Unique Image */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src={bgBanner3} 
-            alt="Chess Academy Gallery" 
-            className="w-full h-full object-cover opacity-100"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-white via-white/5 to-transparent" />
-        </div>
-
-        <div className="container px-6 mx-auto relative z-10">
-          <div className="max-w-6xl mx-auto flex flex-col items-center md:items-start text-center md:text-left">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              className="inline-block p-4 bg-primary/20 rounded-2xl mb-8 border border-primary/20 shadow-2xl shadow-primary/20 bg-white/20 backdrop-blur-md"
-            >
-               <ZoomIn className="w-10 h-10 md:w-14 md:h-14 text-primary" />
-            </motion.div>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-9xl font-black text-slate-900 mb-4 uppercase tracking-tighter italic leading-none"
-            >
-              MOMENTS OF <span className="text-primary italic font-black">GLORY</span>
-            </motion.h2>
-            <p className="text-slate-700 max-w-4xl font-medium text-lg md:text-2xl px-2 md:px-0 leading-relaxed italic">
-              Witness our journey through the lens. From State championships to everyday strategy sessions at <span className="text-primary font-black uppercase tracking-widest not-italic italic">Master Chess Academy</span>.
-            </p>
-          </div>
-        </div>
-      </section>
-
       <div className="container px-4 md:px-6 mx-auto py-24 md:py-40 relative z-10">
         {/* Academy Highlights */}
         {academyImages.length > 0 ? (

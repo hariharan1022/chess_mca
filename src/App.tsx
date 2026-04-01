@@ -10,6 +10,7 @@ import { Puzzles } from './components/sections/Puzzles'
 import { Contact } from './components/sections/Contact'
 import { Footer } from './components/layout/Footer'
 import { Gallery } from './components/sections/Gallery'
+import { PrivacyTerms } from './components/sections/PrivacyTerms'
 import { GraduationCap, Trophy, MessageSquare, Globe, Target, Star } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
@@ -19,74 +20,6 @@ function ScrollToTop() {
     window.scrollTo(0, 0);
   }, [pathname]);
   return null;
-}
-
-function StudentsPride() {
-  const students = [
-    { name: "Aryan Singh", achievement: "National U-12 Champion", img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=400" },
-    { name: "Riya Sharma", achievement: "FIDE Master Candidate", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400" },
-    { name: "Kevin Mathews", achievement: "State Rapid Champion", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400" }
-  ];
-
-  const duplicatedStudents = [...students, ...students, ...students];
-
-  return (
-    <section className="py-24 md:py-40 relative overflow-hidden bg-white">
-      <div className="absolute inset-0 z-0 opacity-40">
-          <div className="absolute inset-0" style={{ backgroundImage: `radial-gradient(#b48a0d 0.5px, transparent 0.5px)`, backgroundSize: '24px 24px' }} />
-          <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white" />
-      </div>
-      
-      <div className="container px-6 mx-auto relative z-10 text-center mb-16 md:mb-24">
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-3xl md:text-7xl font-black text-slate-900 uppercase tracking-tighter italic mb-6 leading-none">
-            OUR STUDENTS <span className="text-primary">OUR PRIDE</span>
-          </h2>
-          <p className="text-slate-900 max-w-2xl mx-auto font-medium text-lg md:text-xl italic">
-            Meet the <span className="text-primary font-bold">champions</span> who have conquered the District and State stages through Master Chess Academy roadmap.
-          </p>
-        </motion.div>
-      </div>
-
-      <div className="relative flex overflow-hidden -mx-6 md:-mx-12">
-        <motion.div 
-          className="flex gap-8 md:gap-12 px-6"
-          animate={{
-            x: ["0%", "-33.33%"],
-          }}
-          transition={{
-            x: {
-              repeat: Infinity,
-              repeatType: "loop",
-              duration: 20,
-              ease: "linear",
-            },
-          }}
-        >
-          {duplicatedStudents.map((student, i) => (
-            <div 
-              key={i}
-              className="w-[280px] md:w-[400px] shrink-0 p-8 md:p-12 border border-slate-100 text-center group bg-white shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] rounded-[3rem] hover:shadow-[0_40px_100px_-20px_rgba(180,138,13,0.15)] transition-all duration-500 hover:border-primary/20"
-            >
-              <div className="w-28 h-28 md:w-40 md:h-40 mx-auto mb-8 rounded-[2rem] overflow-hidden border-4 border-slate-50 group-hover:border-primary/20 transition-all duration-500 shadow-xl group-hover:scale-105">
-                 <img src={student.img} alt={student.name} className="w-full h-full object-cover transition-all duration-700" />
-              </div>
-              <h4 className="text-xl md:text-2xl font-black text-slate-900 uppercase tracking-widest mb-2 italic">{student.name}</h4>
-              <div className="w-10 h-1 bg-primary/20 mx-auto mb-4 group-hover:w-20 transition-all duration-500" />
-              <p className="text-primary text-xs md:text-sm font-black uppercase tracking-widest italic">{student.achievement}</p>
-            </div>
-          ))}
-        </motion.div>
-        
-        <div className="absolute inset-y-0 left-0 w-20 md:w-40 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-20 md:w-40 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
-      </div>
-    </section>
-  );
 }
 
 function CoursesShort() {
@@ -450,7 +383,6 @@ function Home() {
       <HeroStats />
       <StateCommunity />
       <ParentReviews />
-      <StudentsPride />
       <CoursesShort />
       
       <div className="container mx-auto px-6 py-24 md:py-60 text-center relative overflow-hidden group">
@@ -578,6 +510,7 @@ function App() {
             <Route path="/gallery" element={<PageWrapper><Gallery /></PageWrapper>} />
             <Route path="/puzzles" element={<PageWrapper><Puzzles /></PageWrapper>} />
             <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
+            <Route path="/privacy-terms" element={<PageWrapper><PrivacyTerms /></PageWrapper>} />
           </Routes>
         </AnimatePresence>
       </main>
