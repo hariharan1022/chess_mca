@@ -1,7 +1,63 @@
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Heart, ChevronUp, Github, Twitter, Linkedin, Instagram, ArrowRight, MapPin, Phone, Mail } from 'lucide-react';
+import { Heart, ChevronUp, Github, Twitter, Linkedin, Instagram, ArrowRight, MapPin, Phone, Mail, ChevronDown } from 'lucide-react';
 import mcaLogo from '@/assets/mca logo.jpeg';
+
+const faqs = [
+  { q: "My kid is only 3 years but likes chess a lot, is it a right time to start coaching?", a: "Yes, we evaluate young beginners and have special introductory methods to develop their interest." },
+  { q: "Do you offer trial class?", a: "Yes, we provide a free evaluation and trial class to understand your child's current level." },
+  { q: "What devices/systems do I need for the class?", a: "A basic laptop, PC, or tablet with a stable internet connection is sufficient for online sessions." },
+  { q: "What is the syllabus & course duration?", a: "We follow National standard syllabus. Duration varies from Beginner to Advanced levels." },
+  { q: "Are weekend sessions available?", a: "Yes, we have flexible weekend batches designed specifically for school-going students." },
+  { q: "Does worksheet & Playing Practice available?", a: "Absolutely. We provide regular tactical worksheets and dedicated playing practice sessions." }
+];
+
+function FAQSection() {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  return (
+    <div className="max-w-4xl mx-auto mb-20 pb-20 border-b border-slate-200">
+      <div className="text-center mb-12">
+        <h2 className="text-3xl md:text-5xl font-black text-slate-900 uppercase tracking-tighter italic mb-2">
+          Find Out <span className="text-primary italic">Answers</span> Here
+        </h2>
+        <p className="text-slate-500 font-medium italic">Find answers for your Doubts</p>
+      </div>
+      
+      <div className="space-y-4 text-left">
+        {faqs.map((faq, i) => (
+          <div 
+            key={i} 
+            className={`border rounded-2xl overflow-hidden transition-all duration-300 ${openIndex === i ? 'border-primary bg-primary/5 shadow-md shadow-primary/10' : 'border-slate-200 bg-white hover:border-primary/50'}`}
+          >
+            <button 
+              onClick={() => setOpenIndex(openIndex === i ? null : i)}
+              className="w-full flex items-center justify-between p-5 text-left"
+            >
+              <span className={`font-bold text-sm md:text-base pr-4 ${openIndex === i ? 'text-primary' : 'text-slate-800'}`}>{faq.q}</span>
+              <ChevronDown className={`w-5 h-5 shrink-0 transition-transform duration-300 ${openIndex === i ? 'rotate-180 text-primary' : 'text-slate-400'}`} />
+            </button>
+            <AnimatePresence>
+              {openIndex === i && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: 'auto', opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  className="overflow-hidden"
+                >
+                  <div className="p-5 pt-0 text-slate-600 text-sm leading-relaxed border-t border-slate-200 mt-2">
+                    {faq.a}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export function Footer() {
   const scrollToTop = () => {
@@ -11,6 +67,8 @@ export function Footer() {
   return (
     <footer className="bg-slate-50 border-t border-slate-200 py-16 md:py-24 relative overflow-hidden">
       <div className="container px-6 mx-auto relative z-10">
+        <FAQSection />
+        
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-16 mb-20">
           
           {/* Brand & Social Column */}
@@ -47,7 +105,7 @@ export function Footer() {
                <span className="w-6 h-px bg-primary" /> EXPLORE
             </h4>
             <ul className="space-y-4">
-              {['Courses', 'Trainers', 'Gallery', 'About Us', 'Contact'].map(item => (
+              {['Courses', 'Gallery', 'About Us', 'Contact'].map(item => (
                 <li key={item}>
                   <a href={`/${item.toLowerCase().replace(' ', '')}`} className="text-sm font-bold text-slate-500 hover:text-primary transition-colors flex items-center gap-2 group uppercase tracking-widest">
                     <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform opacity-50 group-hover:opacity-100" />
@@ -83,6 +141,17 @@ export function Footer() {
                      <p className="font-black text-slate-900 uppercase tracking-[0.2em] text-[10px] mb-1">SECOND BRANCH</p>
                      <p className="text-sm font-medium leading-relaxed italic">Periyar Nagar,<br />Pudukkottai</p>
                   </div>
+               </div>
+               
+               {/* Small Location Map */}
+               <div className="w-full h-32 rounded-2xl border border-slate-200 overflow-hidden mt-4 group">
+                 <iframe 
+                   title="Small Location Map"
+                   src="https://maps.google.com/maps?q=10.3881397,78.8270492&hl=en&z=14&output=embed"
+                   className="w-full h-full border-0 grayscale group-hover:grayscale-0 transition-all duration-500"
+                   allowFullScreen
+                   loading="lazy"
+                 ></iframe>
                </div>
             </div>
           </div>
@@ -141,3 +210,4 @@ export function Footer() {
     </footer>
   );
 }
+

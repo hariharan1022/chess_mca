@@ -5,7 +5,6 @@ import { Navbar } from './components/layout/Navbar'
 import { Hero } from './components/sections/Hero'
 import { About } from './components/sections/About'
 import { Courses } from './components/sections/Courses'
-import { Trainers } from './components/sections/Trainers'
 import { Puzzles } from './components/sections/Puzzles'
 import { Contact } from './components/sections/Contact'
 import { Footer } from './components/layout/Footer'
@@ -49,7 +48,7 @@ function CoursesShort() {
           <h2 className="text-3xl md:text-7xl font-black text-slate-900 uppercase tracking-tighter italic mb-6 leading-none">
             OUR <span className="text-primary italic">COURSES</span>
           </h2>
-          <p className="text-slate-900 max-w-2xl mx-auto font-medium text-lg md:text-xl italic">Choose your level and start your <span className="text-primary font-bold">professional chess training</span> based on District and State standards.</p>
+          <p className="text-slate-900 max-w-2xl mx-auto font-medium text-lg md:text-xl italic">Choose your level and start your <span className="text-primary font-bold">professional chess training</span> based on National standards.</p>
         </motion.div>
       </div>
 
@@ -506,7 +505,6 @@ function App() {
             <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
             <Route path="/about" element={<PageWrapper><About /></PageWrapper>} />
             <Route path="/courses" element={<PageWrapper><Courses /></PageWrapper>} />
-            <Route path="/trainers" element={<PageWrapper><Trainers /></PageWrapper>} />
             <Route path="/gallery" element={<PageWrapper><Gallery /></PageWrapper>} />
             <Route path="/puzzles" element={<PageWrapper><Puzzles /></PageWrapper>} />
             <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />

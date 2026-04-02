@@ -71,7 +71,7 @@ export function Gallery() {
           <div>
             <h3 className="text-xl md:text-2xl font-black text-slate-900 mb-6 md:mb-8 uppercase tracking-widest italic flex items-center gap-3 md:gap-4">
                <span className="w-8 md:w-12 h-px bg-primary" />
-               DISTRICT & STATE CHAMPIONSHIPS
+               NATIONAL LEVEL CHAMPIONSHIPS
             </h3>
             {/* Grid 2-col on mobile, 3-col on lg */}
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8">

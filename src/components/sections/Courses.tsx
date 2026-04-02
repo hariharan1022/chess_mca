@@ -1,9 +1,7 @@
-
-import { BookOpen, Target, CheckCircle2, Shield, Star, Award, Zap, Brain, TrendingUp } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { BookOpen, Shield, Award, Zap, Brain, TrendingUp, Target, Star } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
-import bgBanner1 from '@/assets/background_banner/banner1.jpeg';
 import bgBanner2 from '@/assets/background_banner/banner2.jpeg';
-import bgBanner3 from '@/assets/background_banner/banner3.jpeg';
 
 const coursesData = [
   {
@@ -14,11 +12,27 @@ const coursesData = [
     description: 'Perfect for those starting their journey. We cover piece movement, board notation, and fundamental winning patterns to turn you from a spectator into a player.',
     about: 'The beginner course is meticulously designed to build a rock-solid foundation. You will learn the history of chess, the movement of every piece, and the basic principles that govern the opening, middle, and end games.',
     curriculum: [
-      'Algebraic Notation: The language of chess',
-      'The Golden Rules of Openings',
-      'Basic Checkmate Patterns (Back-rank, Scholar\'smate)',
-      'Special Moves: Castling, En Passant, and Promotion',
-      'Fundamental Tactics: Pins, Forks, and Skewers'
+      'Introduction about Board, pieces, Values, Arrangements, and movements & Captures',
+      'Notation and Score sheet writing practice',
+      'Attacks and their importance',
+      'Defence and its importance',
+      'Checks & How to get out from checks',
+      'About Checkmate',
+      'Special moves (Castling, Enpassant & Pawn promotion and their rules)',
+      'General rules to follow while playing',
+      'Stalemate and their conditions',
+      'Mate in One (Simple, Medium & Hard level)',
+      'Basic Checkmate (King + Queen Vs. King)',
+      'Basic Checkmate (King + Double Rook Vs. King)',
+      'Taking Free pieces or Unprotected pieces',
+      'Composing Mate in one (Add the missing piece to checkmate)',
+      'Opening principles and example',
+      'Pin',
+      'Knight fork',
+      'Double attack',
+      'Discovered attack, Discovered Check & Double check',
+      'Playing Practice and Analyses',
+      'Reviews and Doubts Clearance'
     ],
     outcomes: [
       'Confidently play a full game of tournament chess',
@@ -33,7 +47,6 @@ const coursesData = [
       'The importance of piece activity'
     ],
     whyChooseUs: 'Our beginner program uses interactive visualized tools that make the complex rules of chess intuitive and fun for kids and adults alike.',
-    image: bgBanner1,
     stats: { puzzles: '', duration: '', students: '100+' }
   },
   {
@@ -44,11 +57,28 @@ const coursesData = [
     description: 'For players who know the rules but want to understand the "Why" behind the moves. Focus on middle-game strategies and complex tactics.',
     about: 'At this stage, we transition from "how to move" to "how to plan". You will dive deep into pawn structures, piece coordination, and the psychological aspects of competition.',
     curriculum: [
-      'Advanced Tactical Patterns (Discovered attacks, Deflections)',
-      'Pawn Structure Strategy: Isloated, Doubled, and Passed pawns',
-      'Rook Endgame Fundamentals: Lucena & Philidor positions',
-      'Minor Piece Coordination: Bishop vs Knight battles',
-      'Calculation & Visualization: Thinking 3-5 moves ahead'
+      'King + Rook Vs. King Checkmate',
+      'Mate in 2 (Simple & Medium)',
+      'Pin-Level 2',
+      'Knight Fork-Level 2',
+      'Double attack - Level 2',
+      'Discovered attack, Discovered Check & Double Check-Level 2',
+      'Back-rank weakness',
+      'Skewer Attack',
+      'Removing the Guard',
+      'Clearance',
+      'Decoy',
+      'Deflection',
+      'Windmill',
+      'X-Ray Attack',
+      'Opening principles Instructive games and tips to follow in first 15 moves',
+      'Direct Defence and Indirect defence',
+      'Attack & Counterattack',
+      'How to defend against Mate',
+      'Types of Draws',
+      'Simplification',
+      'Playing Practice and Analyses',
+      'Reviews and Doubts Clearance'
     ],
     outcomes: [
       'Develop complex winning plans in the middle game',
@@ -63,25 +93,38 @@ const coursesData = [
       'Managing time and nerves in tournaments'
     ],
     whyChooseUs: 'We use Grandmaster-level analysis software and personalized feedback to identify and fix your persistent tactical blindspots.',
-    image: bgBanner2,
     stats: { puzzles: '2000+', duration: '', students: '100+' }
   },
   {
     id: 'advanced',
-    title: 'PHASE 03: STATE-LEVEL PREPARATION',
+    title: 'PHASE 03: NATIONAL PREPARATION',
     level: 'Advanced',
     tagline: 'MASTER THE ELITE TECHNIQUES & OPENING PREP',
     description: 'The highest level of preparation. Intensive training with 4000+ puzzles, deep engine analysis, and games against expert mentors.',
     about: 'Our Advanced program is a rigorous "bootcamp" for aspiring professionals. We provide you with the same training tools and opening repertoires used by the world\'s top 1% of players.',
     curriculum: [
-      'Elite Opening Prep: Building a bulletproof repertoire',
-      'Complex Theoretical Endgames: The art of the draw and the win',
-      'Advanced Positional Sacrifices & Dynamics',
-      'Engine Analysis: Using Stockfish & Leela like a pro',
-      'Tournament Preparation: Physical and mental peak performance'
+      'Double Bishop Mate',
+      'Bishop and Knight Mate',
+      'Must know theoretical endgames',
+      'Various Checkmate Patterns (37 Patterns)',
+      'Clearance -Level 2',
+      'Decoy -Level 2',
+      'Deflection-level 2',
+      'Zugzuwang',
+      'X-Ray Attack-Level 2',
+      'Elimination of defence',
+      'Development & Improvement of pieces after Opening Phase (Instructive Games)',
+      'Pawn Storming (Instructive games)',
+      'Attacking the Castled and Un-castled King',
+      'Hunting the King (Instructive games & Positions)',
+      'Weak pawns',
+      'Pawn Majorities',
+      'Combinations and Practical studies for Calculations',
+      'Manoeuvring and regrouping the pieces',
+      'Opening Preparations for both sides white and Black (King pawn & Queen pawn)'
     ],
     outcomes: [
-      'Ready to compete in District and State level tournaments',
+      'Ready to compete in National level tournaments',
       'Mastery over modern opening theories and variations',
       'Ability to calculate deep, branching variations with precision',
       'Development of a signature playing style'
@@ -92,34 +135,70 @@ const coursesData = [
       'High-pressure decision making',
       'Physical stamina for multi-hour games'
     ],
-    whyChooseUs: 'Direct access to expert District and State level trainers. You aren\'t just a student; you are an apprentice to true experts.',
-    image: bgBanner3,
+    whyChooseUs: 'Direct access to expert National level trainers. You aren\'t just a student; you are an apprentice to true experts.',
     stats: { puzzles: '4000+', duration: '', students: '100+' }
   }
 ];
 
+const CoursesHero = () => (
+  <section className="pt-32 pb-16 md:pt-48 md:pb-24 bg-gradient-to-b from-slate-50 to-white text-center px-6 relative overflow-hidden">
+    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[100px] pointer-events-none -z-10" />
+    <div className="container mx-auto relative z-10">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-slate-200 text-slate-800 font-bold uppercase tracking-widest text-[10px] md:text-xs mb-8 shadow-sm">
+          <BookOpen className="w-3 h-3 text-primary" /> Master Chess Academy
+        </div>
+        <h1 className="text-4xl md:text-6xl lg:text-8xl font-black text-slate-900 uppercase tracking-tighter italic leading-none mb-6">
+          OUR <span className="text-primary italic">CURRICULUM</span>
+        </h1>
+        <p className="text-slate-500 max-w-2xl mx-auto text-sm md:text-xl font-medium leading-relaxed">
+          Structured, meticulous programs designed to take you from a curious beginner to a tournament-ready champion.
+        </p>
+      </motion.div>
+    </div>
+  </section>
+);
+
 const StateBenefits = () => (
-  <section className="py-8 md:py-24 bg-black text-white relative overflow-hidden">
+  <section className="py-20 md:py-32 bg-slate-900 text-white relative overflow-hidden">
      <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-10 grayscale"
         style={{ backgroundImage: `url(${bgBanner2})` }}
-     >
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/50 to-black/80" />
-     </div>
-     <div className="container px-4 md:px-6 mx-auto relative z-10 text-center">
-        <h2 className="text-lg md:text-4xl font-black uppercase italic tracking-tighter mb-6 md:mb-12 leading-tight text-white">BENEFITS OF <span className="text-primary italic">PLAYING CHESS</span></h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+     />
+     <div className="container px-6 mx-auto relative z-10 text-center">
+        <motion.h2 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-3xl md:text-5xl font-black uppercase italic tracking-tighter mb-12 md:mb-20 leading-tight"
+        >
+          BENEFITS OF <span className="text-primary italic">PLAYING CHESS</span>
+        </motion.h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
            {[
-             { icon: <Brain className="w-6 h-6 md:w-8 md:h-8" />, title: "Boost IQ", desc: "Scientific studies show chess increases cognitive power and memory." },
-             { icon: <Target className="w-6 h-6 md:w-8 md:h-8" />, title: "Better Focus", desc: "Intense concentration leads to better academic and professional performance." },
-             { icon: <Shield className="w-6 h-6 md:w-8 md:h-8" />, title: "Problem Solving", desc: "Strategic thinking translates to real-world decision-making skills." },
-             { icon: <Star className="w-6 h-6 md:w-8 md:h-8" />, title: "Confidence", desc: "Mastering a complex art builds self-belief and sportsmanship." }
+             { icon: <Brain />, title: "Boost IQ", desc: "Scientific studies show chess increases cognitive power and memory." },
+             { icon: <Target />, title: "Better Focus", desc: "Intense concentration leads to better academic and professional performance." },
+             { icon: <Shield />, title: "Problem Solving", desc: "Strategic thinking translates to real-world decision-making skills." },
+             { icon: <Star />, title: "Confidence", desc: "Mastering a complex art builds self-belief and sportsmanship." }
            ].map((b, i) => (
-             <div key={i} className="p-6 md:p-8 border border-white/10 bg-black/30 backdrop-blur-md rounded-2xl group hover:border-primary/50 transition-all flex flex-col items-center shadow-2xl">
-                <div className="text-primary mb-4 md:mb-5 transition-transform group-hover:scale-110">{b.icon}</div>
-                <h4 className="text-base md:text-lg font-bold mb-2 md:mb-3 uppercase italic tracking-widest text-white">{b.title}</h4>
-                <p className="text-slate-300 text-xs md:text-sm font-light leading-relaxed">{b.desc}</p>
-             </div>
+             <motion.div 
+               initial={{ opacity: 0, y: 30 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true }}
+               transition={{ delay: i * 0.1 }}
+               key={i} 
+               className="p-8 md:p-10 bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-[2rem] group hover:border-primary/50 transition-all flex flex-col items-center hover:-translate-y-2"
+             >
+                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6 transition-transform group-hover:scale-110 group-hover:bg-primary group-hover:text-slate-900">
+                  {b.icon}
+                </div>
+                <h4 className="text-lg font-black mb-3 uppercase italic tracking-widest">{b.title}</h4>
+                <p className="text-slate-400 text-sm font-medium leading-relaxed italic">{b.desc}</p>
+             </motion.div>
            ))}
         </div>
      </div>
@@ -128,134 +207,113 @@ const StateBenefits = () => (
 
 export function Courses() {
   return (
-    <div className="flex flex-col bg-white overflow-hidden">
-      {/* Course Sections - Scroll One by One */}
-      {coursesData.map((course, index) => (
-        <section key={course.id} className={`py-12 md:py-32 relative overflow-hidden ${index % 2 === 0 ? 'bg-white' : 'bg-slate-50'}`}>
-          <div 
-            className="absolute inset-0 z-0 pointer-events-none opacity-[0.05] bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url(${course.image})` }}
-          />
-          
-          <div className="container px-6 mx-auto relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-24">
-              
-              {/* Left Column: Title & Key Stats */}
-              <div className="lg:col-span-5">
-                <div className="text-xs font-black text-primary tracking-[0.4em] mb-3 md:mb-4 uppercase">{course.level} LEVEL {course.id === 'advanced' && "★"}</div>
-                <h2 className="text-3xl sm:text-4xl md:text-7xl font-black text-slate-900 uppercase italic tracking-tighter leading-none mb-6 md:mb-10">
-                  {course.title}
-                </h2>
-                <div className="p-6 md:p-8 bg-white border border-slate-200 rounded-[2rem] md:rounded-[2.5rem] shadow-2xl mb-8 md:mb-12">
-                   <h4 className="text-xs md:text-sm font-black text-slate-900 uppercase tracking-widest mb-4 md:mb-6 flex items-center gap-2">
-                      <Zap className="w-4 h-4 text-primary" /> ABOUT THIS COURSE
-                   </h4>
-                   <p className="text-slate-600 text-base md:text-lg font-light leading-relaxed italic mb-6 md:mb-8">"{course.about}"</p>
-                   <div className="grid grid-cols-1 gap-2 md:gap-4 border-t border-slate-100 pt-6 md:pt-8 text-center sm:text-left">
-                      {course.stats.puzzles && (
-                        <div>
-                           <div className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">PUZZLES</div>
-                           <div className="text-base md:text-xl font-black text-slate-900 uppercase italic">{course.stats.puzzles}</div>
-                        </div>
-                      )}
-                      {course.stats.duration && (
-                        <div>
-                           <div className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">DURATION</div>
-                           <div className="text-base md:text-xl font-black text-slate-900 uppercase italic">{course.stats.duration}</div>
-                        </div>
-                      )}
-                   </div>
-                </div>
-
-                <div className="p-6 md:p-8 bg-primary/10 rounded-[2rem] md:rounded-[2.5rem] border border-primary/20">
-                   <h4 className="text-xs md:text-sm font-black text-primary uppercase tracking-widest mb-3 md:mb-4 flex items-center gap-2 italic">
-                      <Shield className="w-4 h-4" /> WHY CHOOSE US
-                   </h4>
-                   <p className="text-slate-900 font-bold leading-relaxed tracking-wide italic text-sm sm:text-base">"{course.whyChooseUs}"</p>
-                </div>
-              </div>
-
-              {/* Right Column: Detailed Sections */}
-              <div className="lg:col-span-7 mt-8 lg:mt-0 space-y-10 md:space-y-16">
-                 
-                 {/* Curriculum */}
-                 <div>
-                    <h4 className="text-[10px] md:text-xs font-black text-slate-900 uppercase tracking-[0.3em] mb-6 md:mb-8 flex items-center gap-4">
-                       <BookOpen className="w-3 h-3 md:w-4 md:h-4 text-primary" /> 
-                       DETAILED CURRICULUM
-                       <div className="h-px bg-slate-200 flex-grow" />
-                    </h4>
-                    <div className="space-y-3 md:space-y-4">
-                      {course.curriculum.map((c, i) => (
-                        <div key={i} className="flex gap-3 md:gap-4 p-4 md:p-5 bg-white border border-slate-100 rounded-xl md:rounded-2xl shadow-sm hover:border-primary/30 transition-all hover:translate-x-2">
-                           <CheckCircle2 className="w-4 h-4 md:w-5 md:h-5 text-primary shrink-0 opacity-40" />
-                           <span className="text-slate-700 font-medium text-xs md:text-base leading-tight">{c}</span>
-                        </div>
-                      ))}
+    <div className="flex flex-col bg-slate-50 overflow-hidden">
+      <CoursesHero />
+      
+      {/* Course Sections */}
+      <div className="space-y-16 md:space-y-32 py-16 md:py-24">
+        {coursesData.map((course) => (
+          <motion.section 
+            key={course.id}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="container px-6 mx-auto"
+          >
+            <div className="bg-white rounded-[2rem] md:rounded-[3rem] border border-slate-200 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] overflow-hidden transition-shadow duration-500">
+               
+               {/* Header Area */}
+               <div className="p-8 md:p-12 lg:p-16 bg-white border-b border-slate-100 flex flex-col lg:flex-row gap-8 justify-between items-start lg:items-center relative">
+                  <div>
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/5 text-primary font-bold uppercase tracking-widest text-[10px] md:text-xs rounded mb-4">
+                      {course.id === 'advanced' && <Award className="w-3 h-3" />}
+                      {course.level} Level
                     </div>
-                 </div>
-
-                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-                     {/* Learning Outcomes */}
-                     <div>
-                        <h4 className="text-xs md:text-sm font-black text-slate-900 uppercase tracking-[0.3em] mb-4 md:mb-6 flex items-center gap-3">
-                           <Award className="w-4 h-4 text-primary" /> LEARNING OUTCOMES
-                        </h4>
-                        <ul className="space-y-3 md:space-y-4">
-                          {course.outcomes.map((o, i) => (
-                            <li key={i} className="flex items-start gap-2 md:gap-3 text-slate-500 text-xs md:text-sm italic font-light leading-snug">
-                               <div className="w-1 md:w-1.5 h-1 md:h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
-                               {o}
-                            </li>
-                          ))}
-                        </ul>
-                     </div>
-
-                     {/* What You Will Learn */}
-                     <div>
-                        <h4 className="text-xs md:text-sm font-black text-slate-900 uppercase tracking-[0.3em] mb-4 md:mb-6 flex items-center gap-3">
-                           <Brain className="w-4 h-4 text-primary" /> MASTER LESSONS
-                        </h4>
-                        <ul className="space-y-3 md:space-y-4">
-                          {course.whatYouLearn.map((w, i) => (
-                            <li key={i} className="flex items-start gap-2 md:gap-3 text-slate-500 text-xs md:text-sm italic font-light leading-snug">
-                               <div className="w-1 md:w-1.5 h-1 md:h-1.5 rounded-full bg-slate-900 mt-1.5 shrink-0" />
-                               {w}
-                            </li>
-                          ))}
-                        </ul>
-                     </div>
-                 </div>
-
-                 {/* CTA */}
-                 <div className="pt-8 md:pt-10 flex flex-col sm:flex-row items-center justify-between gap-6 md:gap-8 border-t border-slate-100">
-                    <div className="text-center sm:text-left">
-                        <div className="text-[8px] md:text-[10px] font-black text-slate-400 mb-1 uppercase tracking-widest">STARTING AT</div>
-                        <div className="text-3xl md:text-4xl font-black text-slate-900 uppercase tracking-tighter italic leading-none">₹1300<span className="text-xs md:text-sm font-bold text-slate-400 italic">/MONTH</span></div>
-                    </div>
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 uppercase tracking-tighter italic leading-none">
+                      {course.title.replace(': ', ':\n')}
+                    </h2>
+                    <p className="text-slate-500 font-medium mt-4 max-w-xl text-sm md:text-base leading-relaxed">
+                      {course.description}
+                    </p>
+                  </div>
+                  <div className="shrink-0 flex flex-col gap-3 w-full lg:w-auto">
                     <Button 
                       size="lg" 
-                      className="w-full sm:w-auto px-10 md:px-12 py-5 md:py-7 rounded-2xl bg-slate-900 hover:bg-primary text-white font-black uppercase tracking-widest shadow-2xl shadow-slate-200 transition-all group text-xs md:text-sm"
+                      className="w-full lg:w-auto px-10 py-7 rounded-2xl bg-slate-900 text-white hover:bg-primary hover:text-slate-900 font-black uppercase tracking-widest shadow-xl transition-all text-xs md:text-sm group"
                       onClick={() => window.open(`https://wa.me/9629399085?text=Hello! I would like to enroll in the ${course.level} program at Master Chess Academy.`, '_blank')}
                     >
-                       ENROLL IN {course.level} <TrendingUp className="ml-2 md:ml-3 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                       ENROLL {course.level} <TrendingUp className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Button>
-                 </div>
+                    <div className="text-center lg:text-right text-[10px] font-bold text-slate-400 tracking-widest uppercase">
+                       ₹1300 / Month
+                    </div>
+                  </div>
+               </div>
 
-              </div>
+               {/* Body Area */}
+               <div className="p-8 md:p-12 lg:p-16 grid grid-cols-1 xl:grid-cols-12 gap-12 xl:gap-20 bg-slate-50/50">
+                  
+                  {/* Left Specs */}
+                  <div className="xl:col-span-5 space-y-12">
+                     <div>
+                        <h4 className="text-xs font-black text-slate-900 uppercase tracking-widest mb-4 flex items-center gap-2">
+                           <Zap className="w-4 h-4 text-primary" /> ABOUT THIS COURSE
+                        </h4>
+                        <p className="text-slate-600 leading-relaxed font-medium text-sm md:text-base">{course.about}</p>
+                     </div>
+                     <div>
+                        <h4 className="text-xs font-black text-slate-900 uppercase tracking-widest mb-4 flex items-center gap-2">
+                           <Shield className="w-4 h-4 text-primary" /> WHY CHOOSE US
+                        </h4>
+                        <p className="text-slate-600 leading-relaxed font-medium text-sm md:text-base">{course.whyChooseUs}</p>
+                     </div>
+                     
+                     {/* Stats Quick Look */}
+                     <div className="grid grid-cols-2 gap-4 border-t border-slate-200 pt-8">
+                        <div>
+                           <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">PUZZLES TO SOLVE</div>
+                           <div className="text-2xl font-black text-slate-900 italic tracking-tighter">{course.stats.puzzles || '500+'}</div>
+                        </div>
+                        <div>
+                           <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">HAPPY STUDENTS</div>
+                           <div className="text-2xl font-black text-slate-900 italic tracking-tighter">{course.stats.students}</div>
+                        </div>
+                     </div>
+                  </div>
 
+                  {/* Right Syllabus */}
+                  <div className="xl:col-span-7">
+                     <h4 className="text-xs font-black text-slate-900 uppercase tracking-widest mb-6 flex items-center gap-2 border-b border-slate-200 pb-4">
+                        <Brain className="w-4 h-4 text-primary" /> DETAILED CURRICULUM
+                     </h4>
+                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
+                        {course.curriculum.map((c, i) => (
+                          <div key={i} className="flex gap-3 items-start p-3 bg-white border border-slate-100 rounded-xl hover:border-slate-300 hover:shadow-sm transition-all group">
+                             <div className="text-[10px] font-black text-primary bg-primary/10 w-7 rounded shrink-0 text-center py-1 mt-0.5 group-hover:bg-primary group-hover:text-white transition-colors">
+                               {(i + 1).toString().padStart(2, '0')}
+                             </div>
+                             <span className="text-slate-700 text-xs md:text-sm font-medium leading-snug pt-0.5">{c}</span>
+                          </div>
+                        ))}
+                     </div>
+                  </div>
+
+               </div>
             </div>
-          </div>
-        </section>
-      ))}
-
+          </motion.section>
+        ))}
+      </div>
+      
       <StateBenefits />
 
       {/* Final Global CTA */}
-      <section className="py-20 md:py-40 bg-white text-center">
-         <div className="container px-6 mx-auto">
-            <h2 className="text-4xl sm:text-5xl md:text-8xl font-black text-slate-900 uppercase tracking-tighter mb-8 md:mb-12 italic leading-tight">THE BOARD <span className="text-primary italic">IS WAITING</span></h2>
-            <Button size="lg" variant="gold" className="px-10 md:px-16 py-6 md:py-10 rounded-full text-sm md:text-xl font-black uppercase tracking-[0.2em] md:tracking-[0.3em] shadow-2xl bg-primary text-white border-none hover:scale-105 active:scale-95 transition-all w-full sm:w-auto">
+      <section className="py-24 md:py-40 text-center bg-white border-t border-slate-100 relative overflow-hidden">
+         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] -z-10 pointer-events-none" />
+         <div className="container px-6 mx-auto relative z-10">
+            <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-slate-900 uppercase tracking-tighter mb-8 md:mb-12 italic leading-none">
+              THE BOARD <br className="md:hidden" /><span className="text-primary italic">IS WAITING</span>
+            </h2>
+            <Button size="lg" className="px-10 md:px-16 py-7 rounded-[2rem] text-xs md:text-base font-black uppercase tracking-[0.2em] shadow-xl bg-slate-900 text-white hover:bg-primary hover:text-slate-900 hover:scale-[1.02] transition-all w-full sm:w-auto">
                JOIN MASTER CHESS ACADEMY
             </Button>
          </div>

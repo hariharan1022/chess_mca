@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Shield, Globe, Target, TrendingUp, Award, Users, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import parthibanImg from '@/assets/masters/parthiban.jpeg';
+import mcaLogo from '@/assets/mca logo.jpeg';
 
 const milestones = [
   { year: "2018", event: "Academy Founded", icon: <Shield className="w-6 h-6" /> },
@@ -71,16 +72,9 @@ export function About() {
               className="w-full lg:w-[45%] flex justify-center"
             >
               <div className="bg-white p-8 md:p-12 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] flex items-center justify-center w-full max-w-[380px] aspect-square border border-slate-100">
-                {/* Simulated Logo Design */}
-                <div className="w-full h-full rounded-full border border-slate-200 flex flex-col items-center justify-center relative bg-white">
-                   <div className="absolute inset-2 rounded-full border border-dashed border-[#eab308]/40 animate-[spin_20s_linear_infinite]" />
-                   <div className="text-center z-10 px-4">
-                     <svg className="w-16 h-16 mx-auto text-[#eab308] mb-2" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2C8 2 6 4 6 7c0 1.5.5 3 1.5 4-1 2-2.5 3-4.5 4v5h18v-5c-2-1-3.5-2-4.5-4 1-1 1.5-2.5 1.5-4 0-3-2-5-6-5zm0 2c3 0 4 1.5 4 3 0 1-.5 2-1 2-1 0-2-.5-3-1l-3 4-1-1 2-3c-1.5 0-3-1-3-2 0-1.5 1-3 4-3z"/>
-                     </svg>
-                     <h3 className="text-[#bf1d2d] font-black text-xl md:text-2xl uppercase tracking-tighter">Master Chess</h3>
-                     <p className="text-[10px] sm:text-xs text-slate-900 uppercase tracking-[0.2em] mt-1 font-bold">Academy</p>
-                   </div>
+                {/* Real Logo Image */}
+                <div className="w-full h-full flex items-center justify-center relative bg-white">
+                   <img src={mcaLogo} alt="Master Chess Academy Logo" className="w-full h-full object-contain hover:scale-[1.02] transition-transform duration-500 rounded-lg" />
                 </div>
               </div>
             </motion.div>

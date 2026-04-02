@@ -154,6 +154,31 @@ export function Contact() {
             <div className="absolute bottom-0 left-0 w-24 h-24 bg-slate-100 rounded-full blur-2xl -z-10" />
           </motion.div>
         </div>
+
+        {/* Map Full Width Section */}
+        <motion.div
+           initial={{ opacity: 0, y: 30 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: true }}
+           className="mt-24 lg:mt-32"
+        >
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-5xl font-black text-slate-900 uppercase tracking-tighter italic mb-2">
+              ACADEMY <span className="text-primary italic">LOCATION</span>
+            </h2>
+            <p className="text-slate-500 font-medium italic">Visit us for offline classes in Pudukkottai</p>
+          </div>
+          <div className="w-full h-[400px] md:h-[500px] rounded-[3rem] overflow-hidden shadow-2xl border border-slate-200 relative group bg-white p-2">
+            <iframe 
+              title="Master Chess Academy Location"
+              src="https://maps.google.com/maps?q=10.3881397,78.8270492&hl=en&z=15&output=embed" 
+              className="absolute inset-2 border-0 rounded-[2.5rem] grayscale group-hover:grayscale-0 transition-all duration-700 w-[calc(100%-1rem)] h-[calc(100%-1rem)]" 
+              allowFullScreen 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
