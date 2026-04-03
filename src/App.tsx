@@ -23,72 +23,62 @@ function ScrollToTop() {
 
 function CoursesShort() {
   const courses = [
-    { title: "Beginner", icon: <GraduationCap size={40} />, desc: "Layout foundations correctly.", accent: "01" },
-    { title: "Intermediate", icon: <Target size={40} />, desc: "Strategic depth & tactics.", accent: "02" },
-    { title: "Advance", icon: <Trophy size={40} />, desc: "Grandmaster level techniques.", accent: "03" }
+    { title: "Beginner", icon: <GraduationCap size={48} />, subtitle: "THE FOUNDATION", desc: "Perfect for those starting their journey. We cover piece movement, board notation, and fundamental winning patterns.", accent: "01" },
+    { title: "Intermediate", icon: <Target size={48} />, subtitle: "STRATEGIC DEPTH", desc: "Transition from 'how to move' to 'how to plan'. Focus on middle-game strategies and complex tactics.", accent: "02" },
+    { title: "Advanced", icon: <Trophy size={48} />, subtitle: "ELITE PREPARATION", desc: "Highest level of training. Intensive engine analysis, deep opening prep, and state/national level coaching.", accent: "03" }
   ];
 
-  const duplicatedCourses = [...courses, ...courses, ...courses];
-
   return (
-    <section className="py-24 md:py-40 relative overflow-hidden bg-white">
-       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+    <section className="py-24 md:py-48 relative overflow-hidden bg-slate-50/50">
+       <div className="absolute inset-x-0 top-0 h-px bg-slate-200" />
        
-       {/* More visible Chess Pattern */}
-       <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
-          <div className="absolute inset-0" style={{ backgroundImage: `radial-gradient(#b48a0d 0.8px, transparent 0.8px)`, backgroundSize: '32px 32px' }} />
-          <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white" />
+       <div className="container px-6 mx-auto relative z-10">
+         <motion.div 
+           initial={{ opacity: 0, y: 30 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: true }}
+           className="text-center mb-16 md:mb-24"
+         >
+           <h2 className="text-4xl md:text-8xl font-black text-slate-900 uppercase tracking-tighter italic mb-8 leading-none">
+             OUR <span className="text-primary italic">CURRICULUM</span>
+           </h2>
+           <p className="text-slate-500 max-w-2xl mx-auto font-medium text-base md:text-xl italic">
+             Meticulously structured programs designed to take you from a curious beginner to a <span className="text-primary font-bold">National champion</span>.
+           </p>
+         </motion.div>
+
+         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+           {courses.map((c, i) => (
+             <motion.div 
+               key={i} 
+               initial={{ opacity: 0, y: 40 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true }}
+               transition={{ delay: i * 0.1 }}
+               className="group relative"
+             >
+               <div className="bg-white p-10 md:p-14 rounded-[3rem] border border-slate-200/60 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.03)] hover:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.08)] transition-all duration-500 flex flex-col items-center text-center hover:-translate-y-3 h-full">
+                 <div className="absolute top-10 right-10 text-5xl md:text-7xl font-black text-slate-50 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity pointer-events-none">{c.accent}</div>
+                 
+                 <div className="w-20 h-20 bg-slate-50 rounded-3xl flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-white transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-sm">
+                   {c.icon}
+                 </div>
+                 
+                 <div className="text-[10px] font-black text-primary tracking-[0.3em] mb-4 opacity-70 italic">{c.subtitle}</div>
+                 <h4 className="text-2xl md:text-4xl font-black text-slate-900 uppercase tracking-tighter italic mb-6">{c.title}</h4>
+                 <p className="text-slate-500 font-medium text-sm md:text-base leading-relaxed mb-10 italic">"{c.desc}"</p>
+                 
+                 <div className="mt-auto pt-8 border-t border-slate-100 w-full">
+                    <Link to="/courses" className="inline-flex items-center gap-3 text-xs font-black uppercase tracking-[0.2em] text-slate-900 hover:text-primary transition-all group/link">
+                      EXPLORE PHASE {c.accent}
+                      <div className="w-8 h-px bg-slate-900 group-hover/link:w-14 group-hover/link:bg-primary transition-all" />
+                    </Link>
+                 </div>
+               </div>
+             </motion.div>
+           ))}
+         </div>
        </div>
-      <div className="container px-6 mx-auto relative z-10 mb-16 md:mb-24 text-center">
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-3xl md:text-7xl font-black text-slate-900 uppercase tracking-tighter italic mb-6 leading-none">
-            OUR <span className="text-primary italic">COURSES</span>
-          </h2>
-          <p className="text-slate-900 max-w-2xl mx-auto font-medium text-lg md:text-xl italic">Choose your level and start your <span className="text-primary font-bold">professional chess training</span> based on National standards.</p>
-        </motion.div>
-      </div>
-
-      <div className="relative flex overflow-hidden -mx-6 md:-mx-12">
-        <motion.div 
-          className="flex gap-8 md:gap-12 px-6"
-          animate={{
-            x: ["0%", "-33.33%"],
-          }}
-          transition={{
-            x: {
-              repeat: Infinity,
-              repeatType: "loop",
-              duration: 15,
-              ease: "linear",
-            },
-          }}
-        >
-          {duplicatedCourses.map((c, i) => (
-            <div 
-              key={i} 
-              className="w-[280px] md:w-[450px] shrink-0 p-10 md:p-14 border border-slate-100 group hover:border-primary/30 transition-all duration-500 text-center bg-white shadow-xl hover:shadow-2xl rounded-[3rem] relative"
-            >
-              <div className="absolute top-8 right-10 text-4xl md:text-6xl font-black text-slate-50 opacity-[0.05] group-hover:opacity-[0.1] transition-opacity">{c.accent}</div>
-              <div className="text-primary w-16 h-16 mx-auto mb-8 flex items-center justify-center bg-slate-50 group-hover:bg-primary group-hover:text-white rounded-[1.5rem] transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
-                {c.icon}
-              </div>
-              <h4 className="text-2xl md:text-4xl font-black text-slate-900 uppercase tracking-tighter italic mb-4">{c.title}</h4>
-              <p className="text-slate-500 mb-8 font-medium text-xs md:text-sm uppercase tracking-[0.2em] whitespace-normal">{c.desc}</p>
-              <Link to="/courses" className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.3em] text-primary hover:text-slate-900 transition-colors group/link">
-                View Details 
-                <div className="w-6 h-px bg-primary group-hover/link:w-10 transition-all" />
-              </Link>
-            </div>
-          ))}
-        </motion.div>
-
-        <div className="absolute inset-y-0 left-0 w-20 md:w-40 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-20 md:w-40 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
-      </div>
     </section>
   );
 }
@@ -106,11 +96,11 @@ function StateCommunity() {
           >
             <h2 className="text-3xl md:text-7xl font-black text-slate-900 italic uppercase tracking-tighter mb-8 md:mb-12 leading-[0.9]">
               Chess Kids <br /> 
-              <span className="text-primary italic">State</span> <br /> 
+              <span className="text-primary italic">National</span> <br /> 
               Community
             </h2>
             <p className="text-slate-900 text-lg md:text-xl font-light mb-12 md:mb-16 max-w-xl italic border-l-4 border-primary/20 pl-8">
-              Building <span className="text-primary font-bold">State and District champions</span> starts with a strong foundation and a shared passion for the game.
+              Building <span className="text-primary font-bold">National and State champions</span> starts with a strong foundation and a shared passion for the game.
             </p>
             
             <div className="space-y-8 md:space-y-10">
@@ -163,7 +153,7 @@ function StateCommunity() {
                className="absolute -top-6 -right-6 md:-top-10 md:-right-10 z-20 bg-white p-6 md:p-8 rounded-3xl shadow-2xl border border-slate-100 flex flex-col items-center"
              >
                 <div className="text-primary font-black text-3xl md:text-4xl italic mb-1">500+</div>
-                <div className="text-[8px] md:text-[10px] font-black text-slate-400 uppercase tracking-widest">STATE PLAYERS</div>
+                <div className="text-[8px] md:text-[10px] font-black text-slate-400 uppercase tracking-widest">NATIONAL PLAYERS</div>
              </motion.div>
           </motion.div>
         </div>
