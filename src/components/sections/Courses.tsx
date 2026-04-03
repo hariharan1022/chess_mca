@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { BookOpen, Shield, Award, Zap, Brain, TrendingUp, Target, Star } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
-import bgBanner2 from '@/assets/background_banner/banner2.jpeg';
 
 const coursesData = [
   {
@@ -164,21 +163,17 @@ const CoursesHero = () => (
 );
 
 const StateBenefits = () => (
-  <section className="py-20 md:py-32 bg-slate-900 text-white relative overflow-hidden">
-     <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-10 grayscale"
-        style={{ backgroundImage: `url(${bgBanner2})` }}
-     />
+  <section className="py-20 md:py-32 bg-white relative overflow-hidden">
      <div className="container px-6 mx-auto relative z-10 text-center">
         <motion.h2 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-5xl font-black uppercase italic tracking-tighter mb-12 md:mb-20 leading-tight"
+          className="text-3xl md:text-5xl font-black uppercase italic tracking-tighter mb-12 md:mb-20 leading-tight text-slate-900"
         >
           BENEFITS OF <span className="text-primary italic">PLAYING CHESS</span>
         </motion.h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 text-center text-slate-900">
            {[
              { icon: <Brain />, title: "Boost IQ", desc: "Scientific studies show chess increases cognitive power and memory." },
              { icon: <Target />, title: "Better Focus", desc: "Intense concentration leads to better academic and professional performance." },
@@ -191,13 +186,13 @@ const StateBenefits = () => (
                viewport={{ once: true }}
                transition={{ delay: i * 0.1 }}
                key={i} 
-               className="p-8 md:p-10 bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-[2rem] group hover:border-primary/50 transition-all flex flex-col items-center hover:-translate-y-2"
+               className="p-8 md:p-10 bg-slate-50 border border-slate-100 rounded-[2rem] group hover:border-primary/50 transition-all flex flex-col items-center hover:-translate-y-2 hover:bg-white hover:shadow-2xl"
              >
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6 transition-transform group-hover:scale-110 group-hover:bg-primary group-hover:text-slate-900">
+                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6 transition-transform group-hover:scale-110 group-hover:bg-primary group-hover:text-white">
                   {b.icon}
                 </div>
-                <h4 className="text-lg font-black mb-3 uppercase italic tracking-widest">{b.title}</h4>
-                <p className="text-slate-400 text-sm font-medium leading-relaxed italic">{b.desc}</p>
+                <h4 className="text-lg font-black mb-3 uppercase italic tracking-widest text-slate-900">{b.title}</h4>
+                <p className="text-slate-500 text-sm font-medium leading-relaxed italic">{b.desc}</p>
              </motion.div>
            ))}
         </div>
